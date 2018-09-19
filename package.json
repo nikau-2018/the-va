@@ -1,0 +1,23 @@
+{
+  "name": "pachack-scaffold",
+  "version": "0.1.0",
+  "description": "Wire up pachack-client and pachack-server.",
+  "main": "index.js",
+  "repository": "git@github.com:richchurcher/pachack-scaffold",
+  "author": "EDA",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  },
+  "scripts": {
+    "client": "cd client && yarn start",
+    "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server\"",
+    "install:client": "cd client && yarn",
+    "install:server": "cd server && yarn",
+    "message": "echo \"\n\n  ===== DEVELOPMENT repo only. (You probably meant yarn dev.) =====\n\n\"",
+    "preinstall": "yarn install:client && yarn install:server",
+    "server": "cd server && yarn dev",
+    "start": "yarn --silent message && exit 1"
+  }
+}
