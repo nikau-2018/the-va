@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import request from 'superagent'
+import request from 'axios'
 
 import banner from './Pac-Hack_Banner.jpg'
 import './App.css'
@@ -9,13 +9,10 @@ class App extends Component {
     // Sample API request, remove this!
     request
       .get('/api/v1/users')
-      .end((err, res) => {
-        if (err) {
-          return console.error('NOPE.')
-        }
-
-        console.log('Yup, API on 3001 sent:', res.body)
+      .then(res => {
+        console.log('Yup, API on 3001 sent:', res.data, 'with status', res.status)
       })
+      .catch(console.error)
   }
 
   render () {
