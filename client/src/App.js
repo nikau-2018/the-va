@@ -11,7 +11,7 @@ class App extends Component {
       .get('/api/v1/users')
       .end((err, res) => {
         if (err) {
-          console.error('NOPE.')
+          return console.error('NOPE.')
         }
 
         console.log('Yup, API on 3001 sent:', res.body)
