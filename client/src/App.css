@@ -1,15 +1,15 @@
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 300px;
+  animation: Banner-bounce infinite 1s cubic-bezier(.5, 0, 1, .5) alternate;
+  height: 450px;
 }
 
 .App-header {
   display: flex;
-  padding-top: 300px;
+  padding-top: 100px;
   justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes Banner-bounce {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(0, 400px, 0); }
 }
