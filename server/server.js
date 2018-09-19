@@ -12,4 +12,12 @@ if (process.env.NODE_ENV === 'production') {
 server.use(express.json())
 server.use('/api/v1/users', users)
 
+// In production, serve any request not covered by the above as the built index
+// from CRA's `yarn build` (for BrowserRouter)
+if (process.env.NODE_ENV === 'production') {
+  server.get('*', (req, res) => {
+    res.sendfile(path.join(__dirname, 'public/index.html'))
+  })
+}
+
 module.exports = server

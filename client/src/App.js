@@ -1,24 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import request from 'superagent'
 
-
-
-import logo from './logo.svg';
-import './App.css';
+import banner from './Pac-Hack_Banner.jpg'
+import './App.css'
 
 class App extends Component {
-  render() {
+  componentDidMount () {
+    // Sample API request, remove this!
+    request
+      .get('/api/v1/users')
+      .end((err, res) => {
+        if (err) {
+          console.error('NOPE.')
+        }
+
+        console.log('Yup, API on 3001 sent:', res.body)
+      })
+  }
+
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <header className="App-header">
+        <img src={banner} className="App-logo" alt="banner" />
+      </header>
+    )
   }
 }
 
-export default App;
+export default App
