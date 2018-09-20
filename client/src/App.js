@@ -6,6 +6,10 @@ import './App.css'
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
 
+
+import PostList from './components/PostList'
+
+
 class App extends Component {
   componentDidMount () {
     // Sample API request, remove this!
@@ -19,14 +23,16 @@ class App extends Component {
 
   render() {
     return (
+
       <Router>
         <div>
         <Route exact path='/' component={WelcomePage} />
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
-
+        <Route path ='/list' component = {PostList} />
           </div>
       </Router>
+
     )
   }
 }
