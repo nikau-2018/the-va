@@ -45,7 +45,7 @@ function submitPost (req, res) {
     })
 }
 
-router.post('/:id', submitReply)
+router.post('/reply', submitReply)
 
 function submitReply (req, res) {
   const replyData = req.body.replyData
