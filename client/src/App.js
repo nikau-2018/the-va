@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import request from 'axios'
-
-import banner from './Pac-Hack_Banner.jpg'
+import { HashRouter as Router, Route } from 'react-router-dom'
+import WelcomePage from './components/Welcome/WelcomePage'
 import './App.css'
+import Login from './components/Login/Login'
+import Register from './components/Register/Register'
 
 class App extends Component {
   componentDidMount () {
@@ -15,11 +17,16 @@ class App extends Component {
       .catch(console.error)
   }
 
-  render () {
+  render() {
     return (
-      <header className="App-header">
-        <img src={banner} className="App-logo" alt="banner" />
-      </header>
+      <Router>
+        <div>
+        <Route exact path='/' component={WelcomePage} />
+        <Route path='/login' component={Login} />
+        <Route path='/register' component={Register} />
+
+          </div>
+      </Router>
     )
   }
 }
