@@ -1,6 +1,6 @@
 /* 
   FILE:   TOKEN
-  VER:    1.0
+  VER:    1.0.0
   DESC:   Module to generate and issue a JWT token as middleware.
   INPUT:  NONE
   OUTPUT: STRING
@@ -11,7 +11,7 @@
 const jwt = require('jsonwebtoken')
 
 // File exports.
-module.export = {
+module.exports = {
   issue
 }
 
