@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import request from 'axios'
 
-import PostList from './components/PostList'
-
 class App extends Component {
   componentDidMount () {
     // Sample API request, remove this!
@@ -17,7 +15,6 @@ class App extends Component {
   render () {
     return (
       <div>
-        <PostList />
       </div>
     )
   }
