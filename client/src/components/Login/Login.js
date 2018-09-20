@@ -18,6 +18,6 @@ const Login = (props) => {
         </form>
       </div>
     )
-  }
+}
   
-  export default Login
+export default Login
