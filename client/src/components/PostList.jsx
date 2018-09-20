@@ -1,43 +1,48 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import request from 'axios'
 
 import Post from './Post'
 
 /* CHANGE empty parameter to ({posts}) once reducer is hooked up */
-const PostList = () => {
-  const posts = [
-    {
-      title: 'Hello world',
-      displayName: 'AnonymousAlisaEmma',
-      body: 'I would like advice on this topic that is confusing me.',
-      date: 1537415610000,
-      id: 10001
-    },
-    {
-      title: 'Making new friends',
-      displayName: 'CuriousCapybara',
-      body: 'I am experiencing issues with my mental health right now and need advice on how to make friends as an adult.',
-      date: 1537415520000,
-      id: 10002
-    },
-    {
-      title: 'Being true to myself',
-      displayName: 'HappyHippo',
-      body: 'My family is not accepting me for who I am. Any advice?',
-      date: 1537415620000,
-      id: 10003
+class PostList extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      posts: []
     }
-  ]
-  return (
-    <div>
-      {posts.map((post) =>
-        <Post
-          key={post.id}
-          post={post}
-        />
-      )}
-    </div>
-  )
+    this.getPostList = this.getPostList.bind(this)
+  }
+
+  componentDidMount () {
+    this.getPostList()
+  }
+
+  getPostList () {
+    request
+      .get('http://localhost:3001/api/v1/posts')
+      .then(res => {
+        this.setState({
+          posts: res.body
+        })
+      })
+      /* eslint-disable no-console */
+      .catch(console.error)
+  }
+
+  render () {
+    return (
+      <div>
+        {console.log(this.state.posts)}
+        {this.state.posts.map((post) =>
+          <Post
+            key={post.id}
+            post={post}
+          />
+        )}
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = (state) => {
