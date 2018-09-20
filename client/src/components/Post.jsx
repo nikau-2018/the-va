@@ -1,11 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Post = ({post}) => (
   <div>
-    <h4>{post.title}</h4>
+    <Link to={`/post/${post.id}`}>
+      <h4>{post.title}</h4>
+    </Link>
     <h6>{post.displayName}</h6>
     <p>{Date(post.date)}</p>
-    <p>{post.body}</p>
   </div>
 )
 
