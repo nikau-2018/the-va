@@ -25,7 +25,7 @@ class App extends Component {
           <Route exact path='/' component={WelcomePage} />
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
-          <PostList />  
+          <Route path='/list' component={PostList} />
         </div>
       </Router>
     )
