@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import request from 'axios'
 import { HashRouter as Router, Route } from 'react-router-dom'
 
+import './App.css'
+
 import WelcomePage from './components/Welcome/WelcomePage'
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
 import PostList from './components/PostList'
 import MainProfile from './components/Home/MainProfile'
 
-import './App.css'
+import PostList from './components/PostList'
 
 class App extends Component {
   componentDidMount () {
