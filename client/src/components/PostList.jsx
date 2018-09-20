@@ -8,21 +8,21 @@ const PostList = () => {
   const posts = [
     {
       title: 'Hello world',
-      username: 'AnonymousAlisaEmma',
+      displayName: 'AnonymousAlisaEmma',
       body: 'I would like advice on this topic that is confusing me.',
       date: 1537399535,
       id: 10001
     },
     {
       title: 'Making new friends',
-      username: 'CuriousCapybara',
+      displayName: 'CuriousCapybara',
       body: 'I am experiencing issues with my mental health right now and need advice on how to make friends as an adult.',
       date: 1537399521,
       id: 10002
     },
     {
       title: 'Being true to myself',
-      username: 'HappyHippo',
+      displayName: 'HappyHippo',
       body: 'My family is not accepting me for who I am. Any advice?',
       date: 1537397735,
       id: 10003
