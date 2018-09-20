@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import request from 'axios'
-import { HashRouter as Router, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import './App.css'
 
@@ -12,27 +12,25 @@ import MainProfile from './components/Home/MainProfile'
 import PostList from './components/PostList'
 
 class App extends Component {
-  componentDidMount () {
+  componentDidMount() {
     // Sample API request, remove this!
-    request
-      .get('/api/v1/users')
-      .then(res => {
-        console.log('Yup, API on 3001 sent:', res.data, 'with status', res.status)
-      })
-      .catch(console.error)
+    // request
+    //   .get('/api/v1/users')
+    //   .then(res => {
+    //     console.log('Yup, API on 3001 sent:', res.data, 'with status', res.status)
+    //   })
+    //   .catch(console.error)
   }
 
-  render () {
+  render() {
     return (
-      <Router>
-        <div>
-          <Route exact path='/' component={WelcomePage} />
-          <Route path='/login' component={Login} />
-          <Route path='/register' component={Register} />
-          <Route path='/list' component={PostList} />
-          <Route path='/home' component={MainProfile} />
-        </div>
-      </Router>
+      <div>
+        <Route exact path='/' component={WelcomePage} />
+        <Route path='/login' component={Login} />
+        <Route path='/register' component={Register} />
+        <Route path='/list' component={PostList} />
+        {/* <Route path='/home' component={MainProfile} /> */}
+      </div>
     )
   }
 }
