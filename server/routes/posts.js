@@ -29,4 +29,22 @@ function getReplies (req, res) {
     })
 }
 
+router.post('/', submitPost)
+
+function submitPost (req, res) {
+  const postData = req.body.postData
+  db.submitPost(postData)
+    .then(id => {
+      res.status(201).json({
+        ok: true,
+        postId: 9999
+      })
+    })
+    .catch(err => {
+      res.status(500).json(err)
+    })
+}
+
+router.get('/:id', getReplies)
+
 module.exports = router
