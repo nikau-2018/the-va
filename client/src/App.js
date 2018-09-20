@@ -7,7 +7,6 @@ import './App.css'
 import WelcomePage from './components/Welcome/WelcomePage'
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
-
 import PostList from './components/PostList'
 
 class App extends Component {
