@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import PostListItem from './PostListItem'
+import Post from './Post'
 
 /* CHANGE empty parameter to ({posts}) once reducer is hooked up */
 const PostList = () => {
@@ -31,7 +31,7 @@ const PostList = () => {
   return (
     <div>
       {posts.map((post) =>
-        <PostListItem
+        <Post
           key={post.id}
           post={post}
         />
