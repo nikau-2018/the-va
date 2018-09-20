@@ -19,5 +19,8 @@
     "preinstall": "yarn install:client && yarn install:server",
     "server": "cd server && yarn dev",
     "start": "yarn --silent message && exit 1"
+  },
+  "dependencies": {
+    "semantic-ui-react": "^0.82.5"
   }
 }
