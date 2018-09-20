@@ -8,6 +8,6 @@ exports.seed = (knex, Promise) => {
         {id: 1000, username: 'curiouscapybara_username', role: 0},
         {id: 1001, username: 'wobblywombat_username', role: 0},
         {id: 1002, username: 'dummyadmin', role: 1}
-      ]);
-    });
-};
+      ])
+    })
+}
