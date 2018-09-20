@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import request from 'axios'
-
-import banner from './Pac-Hack_Banner.jpg'
+import { HashRouter as Router, Route } from 'react-router-dom'
+import Welcome from './components/Welcome'
 import './App.css'
 
 class App extends Component {
@@ -15,11 +15,16 @@ class App extends Component {
       .catch(console.error)
   }
 
-  render () {
+  render() {
     return (
-      <header className="App-header">
-        <img src={banner} className="App-logo" alt="banner" />
-      </header>
+      <Router>
+        <div>
+        <Route exact path='/' component={Welcome} />
+        <Route path='/login/' component={SignIn} />
+        <Route path='/register' component={register} />
+
+          </div>
+      </Router>
     )
   }
 }
