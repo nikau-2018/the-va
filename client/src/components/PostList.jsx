@@ -11,7 +11,6 @@ class PostList extends React.Component {
     this.state = {
       posts: []
     }
-    this.getPostList = this.getPostList.bind(this)
   }
 
   componentDidMount () {
