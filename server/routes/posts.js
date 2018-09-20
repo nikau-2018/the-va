@@ -9,20 +9,20 @@ router.get('/', getPosts)
 function getPosts (req, res) {
   db.getPosts()
     .then(posts => {
-      res.status(200).json(posts)
+      res.status(200).json({posts})
     })
     .catch(err => {
       res.status(500).json(err)
     })
 }
 
-router.get('/:id', getPostWithReplies)
+router.get('/:id', getReplies)
 
-function getPostWithReplies (req, res) {
+function getReplies (req, res) {
   const postId = req.params.id
-  db.getPostWithReplies(postId)
-    .then(postData => {
-      res.status(200).json(postData)
+  db.getReplies(postId)
+    .then(replies => {
+      res.status(200).json({replies})
     })
     .catch(err => {
       res.status(500).json(err)
