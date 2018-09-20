@@ -7,7 +7,7 @@ const Post = ({post}) => (
       <h4>{post.title}</h4>
     </Link>
     <h6>{post.displayName}</h6>
-    <p>{new Date(post.date).toString()}</p>
+    <p>{new Date(post.createdAt).toString()}</p>
   </div>
 )
 
