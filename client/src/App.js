@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import request from 'axios'
 
-import banner from './Pac-Hack_Banner.jpg'
-import './App.css'
+import PostList from './components/PostList'
 
 class App extends Component {
   componentDidMount () {
@@ -17,9 +16,9 @@ class App extends Component {
 
   render () {
     return (
-      <header className="App-header">
-        <img src={banner} className="App-logo" alt="banner" />
-      </header>
+      <div>
+        <PostList />
+      </div>
     )
   }
 }
