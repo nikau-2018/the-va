@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PostListItem = ({post}) => (
+const Post = ({post}) => (
   <div>
     <h4>{post.title}</h4>
     <h6>{post.username}</h6>
@@ -9,4 +9,4 @@ const PostListItem = ({post}) => (
   </div>
 )
 
-export default PostListItem
+export default Post
