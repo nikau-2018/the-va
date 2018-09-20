@@ -45,6 +45,19 @@ function submitPost (req, res) {
     })
 }
 
-router.get('/:id', getReplies)
+router.post('/:id', submitReply)
+
+function submitReply (req, res) {
+  const replyData = req.body.replyData
+  db.submitReply(replyData)
+    .then(() => {
+      res.status(201).json({
+        ok: true
+      })
+    })
+    .catch(err => {
+      res.status(500).json(err)
+    })
+}
 
 module.exports = router
