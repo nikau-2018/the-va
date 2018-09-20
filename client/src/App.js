@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import request from 'axios'
 import { HashRouter as Router, Route } from 'react-router-dom'
-import Welcome from './components/Welcome'
+import WelcomePage from './components/Welcome/WelcomePage'
 import './App.css'
+import Login from './components/Login/Login'
+import Register from './components/Register/Register'
 
 class App extends Component {
   componentDidMount () {
@@ -19,9 +21,9 @@ class App extends Component {
     return (
       <Router>
         <div>
-        <Route exact path='/' component={Welcome} />
-        <Route path='/login/' component={SignIn} />
-        <Route path='/register' component={register} />
+        <Route exact path='/' component={WelcomePage} />
+        <Route path='/login' component={Login} />
+        <Route path='/register' component={Register} />
 
           </div>
       </Router>
