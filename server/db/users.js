@@ -18,7 +18,9 @@ function getUserById (id, db = connection) {
 }
 
 // Create new user record.
-function createNewUser ({name, password}, db = connection) {
+function createNewUser (username, password, db = connection) {
   return generateHash(password)
-    .then(hash => db('users').insert({ username: name, password_hash: hash }))
+    .then(hash => db('users')
+      .insert({username, password_hash: hash})
+    )
 }

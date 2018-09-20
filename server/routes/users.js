@@ -53,11 +53,10 @@ function getUser (req, res) {
 function register (req, res, next) {
 
   // Get post data to be stored.
-  const name = req.body.name
-  const password = req.body.password
+  const {username, password} =  req.body
 
   // Perform insertion.
-  db.createNewUser(name, password)
+  db.createNewUser(username, password)
 
     // Handle success.
     .then(([id]) => {
@@ -83,7 +82,8 @@ function register (req, res, next) {
       // Internal server error.
       res.status(500).json({
         ok: false,
-        message: 'Something bad happened. We don\'t know why.'
+        message: message
+        // 'Something bad happened. We don\'t know why.'
       })
     })
 }

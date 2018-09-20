@@ -11,9 +11,7 @@
 const sodium = require('libsodium-wrappers')
 
 // File exports
-module.exports = {
-  generateHash
-}
+module.exports = generateHash
 
 // HELPER FUNCTION
 // Generate Hash
