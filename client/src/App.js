@@ -6,6 +6,7 @@ import WelcomePage from './components/Welcome/WelcomePage'
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
 import PostList from './components/PostList'
+import MainProfile from './components/Home/MainProfile'
 
 import './App.css'
 
@@ -28,6 +29,7 @@ class App extends Component {
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
           <Route path ='/list' component = {PostList} />
+          <Router path ='/home' component = {MainProfile} />
         </div>
       </Router>
     )
