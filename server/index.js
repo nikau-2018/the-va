@@ -1,3 +1,4 @@
+require('dotenv').config()
 const server = require('./server')
 
 // Assume development mode (API hits over a proxy) unless PORT is set
