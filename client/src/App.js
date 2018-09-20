@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 import request from 'axios'
+import { HashRouter as Router, Route } from 'react-router-dom'
 
+import WelcomePage from './components/Welcome/WelcomePage'
+import Login from './components/Login/Login'
+import Register from './components/Register/Register'
 import PostList from './components/PostList'
+
+import './App.css'
 
 class App extends Component {
   componentDidMount () {
@@ -16,9 +22,14 @@ class App extends Component {
 
   render () {
     return (
-      <div>
-        <PostList />
-      </div>
+      <Router>
+        <div>
+          <Route exact path='/' component={WelcomePage} />
+          <Route path='/login' component={Login} />
+          <Route path='/register' component={Register} />
+          <Route path='/list' component={PostList} />
+        </div>
+      </Router>
     )
   }
 }
