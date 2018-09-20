@@ -15,10 +15,10 @@ function getPostWithReplies (postId, db = connection) {
     post: {},
     replies: []
   }
-  return getPost(postId, db)
+  return getPost(postId)
     .then(post => {
       postData.post = post
-      return getReplies(postId, db)
+      return getReplies(postId)
         .then(replies => {
           postData.replies = replies
           return postData
@@ -26,13 +26,13 @@ function getPostWithReplies (postId, db = connection) {
     })
 }
 
-function getPost (postId, db) {
+function getPost (postId, db = connection) {
   return db('posts')
     .select()
     .where('id', postId)
 }
 
-function getReplies (postId, db) {
+function getReplies (postId, db = connection) {
   return db('replies')
     .select()
     .where('postId', postId)
