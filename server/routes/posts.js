@@ -16,4 +16,17 @@ function getPosts (req, res) {
     })
 }
 
+router.get('/:id', getPostWithReplies)
+
+function getPostWithReplies (req, res) {
+  const postId = req.params.id
+  db.getPostWithReplies(postId)
+    .then(postData => {
+      res.status(200).json(postData)
+    })
+    .catch(err => {
+      res.status(500).json(err)
+    })
+}
+
 module.exports = router
