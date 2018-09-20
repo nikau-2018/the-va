@@ -13,8 +13,8 @@ Carmelite Müller
 Bryce Kehoe [@bryceknz](https://github.com/bryceknz)  
 
 **Dev Team**  
-Lisa Serous [@Zuzatoy](https://github.com/Zuzatoy) 
+Lisa Serous [@Zuzatoy](https://github.com/Zuzatoy)   
 George Hardy [@georgehardy](https://github.com/georgehardy)  
-Emma Ashley [@emma-nio](https://github.com/emmanio)   
+Emma Ashley [@emma-nio](https://github.com/emmanio)  
 Zaine Kingi [@rous6026nz](https://github.com/rous6026nz)  
-Alisa Herrera-Hayman [@alisamhh](https://github.com/alisamhh)
+Alisa Herrera-Hayman [@alisamhh](https://github.com/alisamhh)  
