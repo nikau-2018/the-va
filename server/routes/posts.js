@@ -29,4 +29,35 @@ function getReplies (req, res) {
     })
 }
 
+router.post('/', submitPost)
+
+function submitPost (req, res) {
+  const postData = req.body.postData
+  db.submitPost(postData)
+    .then(id => {
+      res.status(201).json({
+        ok: true,
+        postId: 9999
+      })
+    })
+    .catch(err => {
+      res.status(500).json(err)
+    })
+}
+
+router.post('/reply', submitReply)
+
+function submitReply (req, res) {
+  const replyData = req.body.replyData
+  db.submitReply(replyData)
+    .then(() => {
+      res.status(201).json({
+        ok: true
+      })
+    })
+    .catch(err => {
+      res.status(500).json(err)
+    })
+}
+
 module.exports = router
