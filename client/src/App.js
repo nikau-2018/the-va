@@ -12,7 +12,7 @@ import PostDetail from './components/PostDetail'
 import Home from './components/Home/Home'
 import PostList from './components/PostList'
 import Village from './components/Village/Village'
-import MyPost from './components/MyPost'
+import MyPost from './components/MyPosts'
 
 class App extends Component {
   render () {

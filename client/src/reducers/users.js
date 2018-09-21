@@ -1,6 +1,8 @@
+import {REGISTER_REQUEST} from '../actions/users'
+
 export default function (state = [], action) {
   switch (action.type) {
-    case 'RECEIVE_USERS':
+    case REGISTER_REQUEST:
       return action.users
 
     default:

@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom'
 export class Register extends React.Component {
     
     state = {
-        name: '',
-        password: ''
+        user: {
+            username: '',
+            password: ''
+        }
+    
     }
 
     handleChange = (e) => {
