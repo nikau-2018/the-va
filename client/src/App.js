@@ -13,6 +13,7 @@ import Home from './components/Home/Home'
 import PostList from './components/PostList'
 import Village from './components/Village/Village'
 import MyPost from './components/MyPost'
+import CheekySkip from './components/CheekySkip'
 
 class App extends Component {
   render () {
@@ -27,6 +28,7 @@ class App extends Component {
           <Route path='/village' component={Village} />
           <Route path='/mypost' component={MyPost} />
           <Route exact path='/postDetail/:id' component={PostDetail} />
+          <Route path='/cheeky-skip' component={CheekySkip} />
         </div>
       </Router>
     )

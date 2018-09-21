@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 export default function WelcomePage (props) {
   return (
@@ -14,6 +14,11 @@ export default function WelcomePage (props) {
       </Link><br />
       <Link to="/register">
         <button>Register</button>
+      </Link>
+      <br />
+      <br />
+      <Link to="/cheeky-skip">
+        <button>Skip...</button>
       </Link>
     </div>
   )
