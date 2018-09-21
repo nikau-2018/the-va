@@ -1,17 +1,27 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Button } from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
 
 export default function Home (props) {
   return (
-    <div className='container'>
-      <h1>Here is some simmple rules before you want to use it::</h1>
-      <Link to="/village">
-        <Button>village</Button>
-      </Link>
-      <Link to="/mypost">
-        <Button>My posts</Button>
-      </Link>
+    <div className="container">
+      <h1>Rules</h1>
+      <p>Please read through the following rules and abide by them to ensure a safe community:</p>
+      <ul>
+        <li>Be patient</li>
+        <li>Be kind</li>
+        <li>Be respectful</li>
+      </ul>
+      <div className="bottom-tabs">
+        <Link to="/myposts">
+          <button>Me</button>
+        </Link>
+        <Link to="/list">
+          <button>Talanoa</button>
+        </Link>
+        <Link to="/village">
+          <button>Village</button>
+        </Link>
+      </div>
     </div>
   )
 }
