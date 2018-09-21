@@ -14,6 +14,19 @@ html {
   border-image: url("./images/triangle.png") 0 100% repeat;
 }
 
+.leaves {
+  /* The image used */
+  background-image: url("./images/leaves.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .macron {
   text-decoration: overline;
 }
@@ -47,14 +60,6 @@ button {
   text-transform: uppercase;   */
 }
 
-/* .border {
-  border:red 1px solid;
-}
-
-.app {
-  display: flex;
-}
- */
 .welcomeToTheVa {
   text-align: center;
   margin-top: 40%;
