@@ -1,40 +1,24 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import request from 'axios'
+import {fetchPosts} from '../actions/index'
 
 import Post from './Post'
 
-/* CHANGE empty parameter to ({posts}) once reducer is hooked up */
 class PostList extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {
-      posts: []
-    }
-    this.getPostList = this.getPostList.bind(this)
+    this.state = {}
   }
 
-  componentDidMount () {
-    this.getPostList()
-  }
-
-  getPostList () {
-    request
-      .get('http://localhost:3001/api/v1/posts')
-      .then(res => {
-        this.setState({
-          posts: res.data.posts
-        })
-      })
-      /* eslint-disable no-console */
-      .catch(console.error)
+  componentWillMount () {
+    this.props.dispatch(fetchPosts())
   }
 
   render () {
     return (
       <div>
-        {console.log(this.state.posts)}
-        {this.state.posts.map((post) =>
+        <h2>test</h2>
+        {this.props.posts.map((post) =>
           <Post
             key={post.id}
             post={post}
@@ -51,6 +35,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(
-  mapStateToProps
-)(PostList)
+export default connect(mapStateToProps)(PostList)
