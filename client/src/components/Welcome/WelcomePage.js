@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 export default function WelcomePage (props) {
   return (
-    <div className='app'>
+    <div>
       <div className='border'/>
       <div className='welcomeToTheVa'>
         <h1>

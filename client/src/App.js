@@ -19,7 +19,7 @@ class App extends Component {
   render () {
     return (
       <Router>
-        <div>
+        <div className='app'>
           <Route exact path='/' component={WelcomePage} />
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
