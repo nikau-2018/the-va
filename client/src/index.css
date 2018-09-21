@@ -5,6 +5,15 @@ body {
   font-family: 'Megrim', cursive;
 }
 
+html {
+  border-left: 1em solid black;
+  border-right: 1em solid black;    
+  height: 100%;
+  background-image: url("./images/triangle.png");
+  background-position: 0 1.06em;
+  background-size: 10% 10%;
+}
+
 .macron {
   text-decoration: overline;
 }
@@ -38,6 +47,14 @@ button {
   text-transform: uppercase;   */
 }
 
+/* .border {
+  border:red 1px solid;
+}
+
+.app {
+  display: flex;
+}
+ */
 .welcomeToTheVa {
   text-align: center;
   margin-top: 40%;
