@@ -17,6 +17,11 @@ export default function WelcomePage (props) {
         <Link to="/register">
           <button>Register</button>
         </Link>
+        <br />
+        <br />
+        <Link to="/cheekySkip">
+          <button>Skip...</button>
+        </Link>
       </div>
     </div>
   )
