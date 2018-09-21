@@ -4,12 +4,20 @@ module.exports = {
   getPosts,
   getReplies,
   submitPost,
-  submitReply
+  submitReply,
+  getUsersPosts
 }
 
 // Sample only: think about what you want this function to actually do...
 function getPosts (db = connection) {
   return db('posts')
+    .select()
+}
+
+// Get users posts.
+function getUsersPosts (userId, db = connection ) {
+  return db('posts')
+    .where('posts.user_id', userId)
     .select()
 }
 
