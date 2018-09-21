@@ -23,7 +23,7 @@ class PostList extends React.Component {
       .get('http://localhost:3001/api/v1/posts')
       .then(res => {
         this.setState({
-          posts: res.body
+          posts: res.body.posts
         })
       })
       /* eslint-disable no-console */
@@ -33,7 +33,6 @@ class PostList extends React.Component {
   render () {
     return (
       <div>
-        {console.log(this.state.posts)}
         {this.state.posts.map((post) =>
           <Post
             key={post.id}
