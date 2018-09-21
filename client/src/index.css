@@ -15,6 +15,16 @@ h1 span {
   font-size: 9vw;
 }
 
+button {
+  border: 0px;
+  width: 70%;
+  background-color: lightgreen;        
+  color: black;  
+  border-radius: 0px;
+/*   Below is needed if we remove skeleton:
+  text-transform: uppercase;   */
+}
+
 .welcomeToTheVa {
   text-align: center;
   margin-top: 40%;
@@ -25,12 +35,18 @@ h1 span {
   text-transform: none;  
 }
 
-button {
-  border: 0px;
-  width: 70%;
-  background-color: lightgreen;        
-  color: black;  
-  border-radius: 0px;
-/*   Below is needed if we remove skeleton:
-  text-transform: uppercase;   */
+.underline {
+  background-repeat: repeat-x;
+}
+
+.underlineTriangles {
+  background-image: url("./images/triangle.png");
+  background-position: 0 1.06em;
+  background-size: 10px 9px;
+  color: #f2f3f8;
+  transform: rotate(180deg);
+}
+
+html {
+  line-height: 1;
 }
