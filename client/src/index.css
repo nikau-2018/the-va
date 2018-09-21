@@ -5,7 +5,7 @@ body {
   color: black;    
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
   text-align: center;
   text-transform: uppercase;
   font-size: 8vw;
@@ -25,10 +25,13 @@ h1 span {
   text-transform: none;  
 }
 
-.welcomeToTheVa button {
+/* Once semantic UI is removed, change the below from .button to button */
+.button {
   border: 0px;
   width: 70%;
   background-color: lightgreen;        
   color: black;  
   border-radius: 0px;
+/*   Below is needed if we remove skeleton:
+  text-transform: uppercase;   */
 }
