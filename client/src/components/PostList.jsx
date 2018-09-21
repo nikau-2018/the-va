@@ -22,7 +22,7 @@ class PostList extends React.Component {
       .get('http://localhost:3001/api/v1/posts')
       .then(res => {
         this.setState({
-          posts: res.data.posts
+          posts: res.body.posts
         })
       })
       /* eslint-disable no-console */
