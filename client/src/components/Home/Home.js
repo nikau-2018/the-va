@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from 'semantic-ui-react'
 
-export default function MainProfile (props) {
+export default function Home (props) {
   return (
     <div className='container'>
       <h1>Here is some simmple rules before you want to use it::</h1>

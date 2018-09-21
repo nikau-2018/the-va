@@ -9,9 +9,9 @@ import Login from './components/Login/Login'
 import Register from './components/Register/Register'
 import PostDetail from './components/PostDetail'
 
-import MainProfile from './components/Home/MainProfile'
+import Home from './components/Home/Home'
 import PostList from './components/PostList'
-import Village from './components/Village.js'
+import Village from './components/Village/Village'
 import MyPost from './components/MyPost'
 
 class App extends Component {
@@ -23,7 +23,7 @@ class App extends Component {
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
           <Route path='/list' component={PostList} />
-          <Route path='/home' component={MainProfile} />
+          <Route path='/home' component={Home} />
           <Route path='/village' component={Village} />
           <Route path='/mypost' component={MyPost} />
           <Route exact path='/postDetail/:id' component={PostDetail} />
