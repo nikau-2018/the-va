@@ -25,8 +25,7 @@ h1 span {
   text-transform: none;  
 }
 
-/* Once semantic UI is removed, change the below from .button to button */
-.button {
+button {
   border: 0px;
   width: 50%;
   background-color: lightgreen;        

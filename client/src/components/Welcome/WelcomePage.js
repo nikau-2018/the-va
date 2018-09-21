@@ -1,23 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from 'semantic-ui-react'
 
 export default function WelcomePage (props) {
   return (
-    <div className='container welcomePage'>
-      <div className='welcomeToTheVa'>
-        <h1>
-          WELCOME <br />
-          TO <br />
-          <span>The Vā</span>
-        </h1>
-        <Link to="/login">
-          <Button>Login</Button>
-        </Link><br />
-        <Link to="/register">
-          <Button>Register</Button>
-        </Link>
-      </div>
+    <div className='welcomeToTheVa'>
+      <h1>
+        WELCOME <br />
+        TO <br />
+        <span>The Vā</span>
+      </h1>
+      <Link to="/login">
+        <button>Login</button>
+      </Link><br />
+      <Link to="/register">
+        <button>Register</button>
+      </Link>
     </div>
   )
 }
