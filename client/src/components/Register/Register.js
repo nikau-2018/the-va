@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from 'semantic-ui-react'
 
 export class Register extends React.Component {
 
@@ -29,7 +28,7 @@ export class Register extends React.Component {
                     <p>Name: <input name='username' onChange={this.handleChange} placeholder="Enter a username..." /></p>
                     <p>Password: <input name='password' onChange={this.handleChange} placeholder="Enter a password..." /></p>
                     <p>Confirm password: <input name='confirm-password' onChange={this.handleChange} placeholder="Re-enter password..." /></p>
-                    <p><Button onClick={this.handleClick}>Register</Button></p>
+                    <p><button onClick={this.handleClick}>Register</button></p>
                     <Link to="/">Go Home</Link>
                 </form>
             </div>

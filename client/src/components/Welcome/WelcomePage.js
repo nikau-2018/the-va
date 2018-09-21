@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from 'semantic-ui-react'
-
 
 export default function WelcomePage (props) {
   return (
@@ -13,10 +11,10 @@ export default function WelcomePage (props) {
           <span>The Vā</span>
         </h1>
         <Link to="/login">
-          <Button>Login</Button>
+          <button>Login</button>
         </Link><br />
         <Link to="/register">
-          <Button>Register</Button>
+          <button>Register</button>
         </Link>
       </div>
     </div>
