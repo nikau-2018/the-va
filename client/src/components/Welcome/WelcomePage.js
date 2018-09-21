@@ -9,8 +9,8 @@ export default function WelcomePage (props) {
       <div className='welcomeToTheVa'>
         <h1>
           WELCOME <br />
-          to <br />
-          The Vā
+          TO <br />
+          <span>The Vā</span>
         </h1>
         <Link to="/login">
           <Button>Login</Button>
