@@ -9,7 +9,7 @@ html {
   border-left: 1em solid transparent;
   border-right: 1em solid transparent;    
   height: 100%;
-  border-image: url("./images/triangle.png") 10 stretch;
+  border-image: url("./images/triangle.png") 27 23 / 50px 30px / 1rem;
   border-image-repeat: repeat;
 }
 
