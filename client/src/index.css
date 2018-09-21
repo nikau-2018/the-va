@@ -37,13 +37,22 @@ button {
 
 .talanoa {
   margin-top: 20%;
+  text-align: center;
 }
 
-.talanoa div span {
+.talanoa .post {
   background-color: lightgreen;
-  padding: 5%;
-  border-radius: 25%;
+  border-top-left-radius: 5em;
+  border-top-right-radius: 5em;
+  border-bottom-right-radius: 5em;
   overflow-wrap: normal;
+  margin: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 5%;
+  font-size: 2vw;
+  display:inline-block;
+  text-align: left;
 }
 
 .underline {

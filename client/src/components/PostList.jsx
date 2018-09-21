@@ -10,7 +10,7 @@ class PostList extends React.Component {
     this.state = {}
   }
 
-  componentWillMount () {
+  UNSAFE_componentWillMount () {
     this.props.dispatch(fetchPosts())
   }
 
@@ -21,12 +21,10 @@ class PostList extends React.Component {
         {console.log(this.state.posts)}
         {this.props.posts.map((post) =>
           <Post
-            className='post'
             key={post.id}
             post={post}
           />
         )}
-        <div><span>Alisa css testing.</span></div>
       </div>
     )
   }
