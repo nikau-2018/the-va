@@ -1,8 +1,21 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   color: black;    
+  font-family: 'Megrim', cursive;
+}
+
+.macron {
+  text-decoration: overline;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+}
+
+a:hover {
+  color: darkgreen;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,6 +28,16 @@ h1 span {
   font-size: 9vw;
 }
 
+button {
+  border: 0px;
+  width: 70%;
+  background-color: lightgreen;        
+  color: black;  
+  border-radius: 0px;
+/*   Below is needed if we remove skeleton:
+  text-transform: uppercase;   */
+}
+
 .welcomeToTheVa {
   text-align: center;
   margin-top: 40%;
@@ -25,13 +48,39 @@ h1 span {
   text-transform: none;  
 }
 
-button {
-  border: 0px;
-  width: 50%;
-  background-color: lightgreen;        
-  color: black;  
-  border-radius: 0px;
-  font-size: 5vw;  
-/*   Below is needed if we remove skeleton:
-  text-transform: uppercase;   */
+.talanoa {
+  margin-top: 20%;
+  text-align: center;
+}
+
+/* .talanoa span {
+} */
+
+.talanoa .post {
+  background-color: lightgreen;
+  border-top-left-radius: 5em;
+  border-top-right-radius: 5em;
+  border-bottom-right-radius: 5em;
+  overflow-wrap: normal;
+  margin: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 5%;
+  font-size: 2vw;
+  display:inline-block;
+  text-align: left;
+}
+
+.underline {
+  background-repeat: repeat-x;
+}
+
+.underlineTriangles {
+  background-image: url("./images/triangle.png");
+  background-position: 0 1.06em;
+  background-size: 10% 10%;
+}
+
+.cheekySkip {
+  text-align: center
 }
