@@ -89,8 +89,7 @@ function register (req, res, next) {
       // Internal server error.
       res.status(500).json({
         ok: false,
-        message: message
-        // 'Something bad happened. We don\'t know why.'
+        message: 'Something bad happened. We don\'t know why.'
       })
     })
 }
@@ -114,8 +113,7 @@ function deleteUser (req, res) {
       // Internal server error.
       res.status(500).json({
         ok: false,
-        message: message
-        // 'Something bad happened. We don\'t know why.'
+        message: 'Something bad happened. We don\'t know why.'
       })
     })
 }
