@@ -1,14 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from 'semantic-ui-react'
 
 export class Register extends React.Component {
-
+    
     state = {
         name: '',
-        email: '',
-        password: '',
-        country: ''
+        password: ''
     }
 
     handleChange = (e) => {
@@ -23,11 +20,13 @@ export class Register extends React.Component {
     }
     render() {
         return (
-            <div className='container'>
+            <div className='register-container'>
+                <h1>Register for The Vā</h1>
                 <form>
-                    <p>Name: <input name='username' onChange={this.handleChange} /></p>
-                    <p>Password: <input name='password' onChange={this.handleChange} /></p>
-                    <p><Button onClick={this.handleClick}>Add user</Button></p>
+                    <p>Name: <input name='username' onChange={this.handleChange} placeholder="Enter a username..." /></p>
+                    <p>Password: <input name='password' onChange={this.handleChange} placeholder="Enter a password..." /></p>
+                    <p>Confirm password: <input name='confirm-password' onChange={this.handleChange} placeholder="Re-enter password..." /></p>
+                    <p><button onClick={this.handleClick}>Register</button></p>
                     <Link to="/">Go Home</Link>
                 </form>
             </div>
