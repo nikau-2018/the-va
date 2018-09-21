@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 // import request from 'axios'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 import './App.css'
 
@@ -12,21 +12,26 @@ import PostDetail from './components/PostDetail'
 import Home from './components/Home/Home'
 import PostList from './components/PostList'
 import Village from './components/Village/Village'
-// import MyPost from './components/MyPost'
+import MyPost from './components/MyPost'
+import CheekySkip from './components/CheekySkip'
+
+import CreatePostMain from './components/CreatePostMain'
 
 class App extends Component {
   render () {
     return (
       <Router>
-        <div>
+        <div className='app'>
           <Route exact path='/' component={WelcomePage} />
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
           <Route path='/list' component={PostList} />
+          <Route path='/create' component={CreatePostMain} />
           <Route path='/home' component={Home} />
           <Route path='/village' component={Village} />
           {/* <Route path='/mypost' component={MyPost} /> */}
           <Route exact path='/postDetail/:id' component={PostDetail} />
+          <Route path='/cheekySkip' component={CheekySkip} />
         </div>
       </Router>
     )

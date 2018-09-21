@@ -16,8 +16,9 @@ class PostList extends React.Component {
 
   render () {
     return (
-      <div>
-        <h2>test</h2>
+      <div className='talanoa'>
+        <h2><span className='underline underlineTriangles'>Talanoa</span></h2>
+        {console.log(this.state.posts)}
         {this.props.posts.map((post) =>
           <Post
             key={post.id}
