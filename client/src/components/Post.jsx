@@ -6,6 +6,7 @@ const Post = ({post}) => (
     <Link to={`/postDetail/${post.id}`}>
       <div>{post.title}</div>
     </Link>
+    <div>{post.body}</div>
     <div>By: {post.displayName}</div>
     <div>Posted: {new Date(post.createdAt).toString()}</div>
   </div>
