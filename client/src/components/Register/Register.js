@@ -23,7 +23,7 @@ export class Register extends React.Component {
         return (
             <div className='container'>
                 <form>
-                    <p>Name: <input name='name' onChange={this.handleChange} /></p>
+                    <p>Name: <input name='username' onChange={this.handleChange} /></p>
                     <p>Password: <input name='password' onChange={this.handleChange} /></p>
                     <p><Button onClick={this.handleClick}>Add user</Button></p>
                     <Link to="/">Go Home</Link>
