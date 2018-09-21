@@ -1,8 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   color: black;    
+  font-family: 'Megrim', cursive;
+}
+
+.macron {
+  text-decoration: overline;
 }
 
 a {
@@ -74,5 +78,5 @@ button {
 .underlineTriangles {
   background-image: url("./images/triangle.png");
   background-position: 0 1.06em;
-  background-size: 10%;
+  background-size: 10% 10%;
 }

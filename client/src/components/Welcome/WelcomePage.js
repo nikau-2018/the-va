@@ -7,7 +7,7 @@ export default function WelcomePage (props) {
       <h1>
         WELCOME <br />
         TO <br />
-        <span>The Vā</span>
+        <span>The V<span className='macron'>a</span></span>
       </h1>
       <Link to="/login">
         <button>Login</button>
