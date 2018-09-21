@@ -5,6 +5,15 @@ body {
   color: black;    
 }
 
+a {
+  color: black;
+  font-weight: bold;
+}
+
+a:hover {
+  color: darkgreen;
+}
+
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
   text-transform: uppercase;
@@ -40,6 +49,9 @@ button {
   text-align: center;
 }
 
+/* .talanoa span {
+} */
+
 .talanoa .post {
   background-color: lightgreen;
   border-top-left-radius: 5em;
@@ -62,5 +74,5 @@ button {
 .underlineTriangles {
   background-image: url("./images/triangle.png");
   background-position: 0 1.06em;
-  background-size: 10px 9px;
+  background-size: 10%;
 }
