@@ -34,7 +34,7 @@ class CreatePost extends React.Component {
       }
     }
 
-    axios.post('http://192.168.1.183:3001/api/v1/posts/', postData)
+    axios.post('http://localhost:3001/api/v1/posts/', postData)
       .then(response => {
         this.setState({done: true})
       })
