@@ -26,9 +26,6 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-top: calc(-50vw);
 }
 
 .macron {
