@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function CheekySkip (props) {
   return (
-    <div className='cheeky-skip'>
+    <div className='cheekySkip'>
       <h1>Here's where the real magic happens...</h1>
       <Link to="/list">
         <button>See posts</button>
