@@ -21,7 +21,6 @@
     "start": "yarn --silent message && exit 1"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "semantic-ui-react": "^0.82.5"
+    "axios": "^0.18.0"
   }
 }

@@ -36,10 +36,12 @@ class PostList extends React.Component {
         {console.log(this.state.posts)}
         {this.state.posts.map((post) =>
           <Post
+            className='post'
             key={post.id}
             post={post}
           />
         )}
+        <div><span>Alisa css testing.</span></div>
       </div>
     )
   }

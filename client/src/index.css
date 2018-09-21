@@ -35,6 +35,17 @@ button {
   text-transform: none;  
 }
 
+.talanoa {
+  margin-top: 20%;
+}
+
+.talanoa div span {
+  background-color: lightgreen;
+  padding: 5%;
+  border-radius: 25%;
+  overflow-wrap: normal;
+}
+
 .underline {
   background-repeat: repeat-x;
 }
@@ -43,10 +54,4 @@ button {
   background-image: url("./images/triangle.png");
   background-position: 0 1.06em;
   background-size: 10px 9px;
-  color: #f2f3f8;
-  transform: rotate(180deg);
-}
-
-html {
-  line-height: 1;
 }
