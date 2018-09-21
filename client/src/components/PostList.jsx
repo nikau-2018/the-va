@@ -10,7 +10,7 @@ class PostList extends React.Component {
     this.state = {}
   }
 
-  componentWillMount () {
+  componentDidMount () {
     this.props.dispatch(fetchPosts())
   }
 

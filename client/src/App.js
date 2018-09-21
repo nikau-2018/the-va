@@ -12,7 +12,7 @@ import PostDetail from './components/PostDetail'
 import Home from './components/Home/Home'
 import PostList from './components/PostList'
 import Village from './components/Village/Village'
-import MyPost from './components/MyPost'
+// import MyPost from './components/MyPost'
 
 class App extends Component {
   render () {
@@ -25,7 +25,7 @@ class App extends Component {
           <Route path='/list' component={PostList} />
           <Route path='/home' component={Home} />
           <Route path='/village' component={Village} />
-          <Route path='/mypost' component={MyPost} />
+          {/* <Route path='/mypost' component={MyPost} /> */}
           <Route exact path='/postDetail/:id' component={PostDetail} />
         </div>
       </Router>

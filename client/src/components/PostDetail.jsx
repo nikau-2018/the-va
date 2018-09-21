@@ -1,51 +1,57 @@
 import React from 'react'
-// import {connect} from 'react-redux'
-import request from 'axios'
+import {connect} from 'react-redux'
+// import request from 'axios'
 
-/* CHANGE empty parameter to ({posts}) once reducer is hooked up */
 class PostDetail extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      post: {},
-      replies: []
+      post: {}
+      // replies: []
     }
   }
 
   componentDidMount () {
-    this.getPostFromStore()
-    this.getReplies()
+    this.getPostDetail()
   }
 
-  getPostFromStore () {
-    // TODO get post from redux store
-    this.setState({post: {
-      id: this.props.match.params.id
-    }
+  getPostDetail () {
+    this.setState({
+      post: this.props.post.filter(post => {
+        return post.id === Number(this.props.match.params.id)
+      })
     })
-    this.getReplies()
   }
+
+  // getPostFromStore () {
+  //   // TODO get post from redux store
+  //   this.setState({post: {
+  //     id: this.props.match.params.id
+  //   }
+  //   })
+  //   this.getReplies()
+  // }
 
   // TODO change api string to get post.id from state. requires
-  getReplies () {
-    request
-      .get(`http://localhost:3001/api/v1/posts/${this.props.match.params.id}`)
-      .then(res => {
-        this.setState({
-          replies: res.data.replies
-        })
-      })
-      /* eslint-disable no-console */
-      .catch(console.error)
-  }
+  // getReplies () {
+  //   request
+  //     .get(`http://localhost:3001/api/v1/posts/${this.props.match.params.id}`)
+  //     .then(res => {
+  //       this.setState({
+  //         replies: res.data.replies
+  //       })
+  //     })
+  //     /* eslint-disable no-console */
+  //     .catch(console.error)
+  // }
 
   render () {
     return (
       <div>
         <div id='post-detail'>
-          <h1>{this.state.post.id}</h1>
+          <h1>{this.state.post.title}</h1>
         </div>
-        <div id='replies'>
+        {/* <div id='replies'>
           {this.state.replies.map(reply => {
             console.log(reply)
             return (
@@ -56,20 +62,16 @@ class PostDetail extends React.Component {
               </div>
             )
           })}
-        </div>
+        </div> */}
       </div>
     )
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     posts: state.posts
-//   }
-// }
+const mapStateToProps = (state) => {
+  return {
+    post: state.posts
+  }
+}
 
-// export default connect(
-//   mapStateToProps
-// )(PostList)
-
-export default PostDetail
+export default connect(mapStateToProps)(PostDetail)
