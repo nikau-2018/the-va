@@ -6,11 +6,12 @@ body {
 }
 
 html {
-  border-left: 1em solid transparent;
-  border-right: 1em solid transparent;    
   height: 100%;
-  border-image: url("./images/triangle.png") 27 23 / 50px 30px / 1rem;
-  border-image-repeat: repeat;
+  border-left: 2em solid transparent;
+  border-right: 2em solid transparent;
+  padding: 1em;
+  margin: 5%;
+  border-image: url("./images/triangle.png") 0 100% repeat;
 }
 
 .macron {
