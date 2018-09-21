@@ -28,10 +28,11 @@ h1 span {
 /* Once semantic UI is removed, change the below from .button to button */
 .button {
   border: 0px;
-  width: 70%;
+  width: 50%;
   background-color: lightgreen;        
   color: black;  
   border-radius: 0px;
+  font-size: 5vw;  
 /*   Below is needed if we remove skeleton:
   text-transform: uppercase;   */
 }
