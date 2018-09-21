@@ -14,10 +14,17 @@ router.post(
 
 router.get('/', getUsers)
 
+// Secure route.
 router.get(
   '/user',
   verifyJwt({ secret: process.env.JWT_SECRET }),
   getUser
+)
+
+// Secure route.
+router.delete(
+  '/user/:id',
+  deleteUser
 )
 
 function getUsers (req, res) {
@@ -78,6 +85,31 @@ function register (req, res, next) {
           message: 'Username already exists.'
         })
       }
+
+      // Internal server error.
+      res.status(500).json({
+        ok: false,
+        message: message
+        // 'Something bad happened. We don\'t know why.'
+      })
+    })
+}
+
+// Delete a users record.
+function deleteUser (req, res) {
+  const id = Number(req.params.id)
+  // Perform DB deletion.
+  db.deleteUser(id)
+
+    // Handle success.
+    .then(() => {
+      res.status(200).json({
+        ok: true,
+        message: 'User deleted successfully.'
+      })
+    })
+    // Handle error.
+    .catch(({ message }) => {
 
       // Internal server error.
       res.status(500).json({

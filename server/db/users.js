@@ -4,7 +4,8 @@ const generateHash = require('../auth/hash')
 module.exports = {
   getUsers,
   getUserById,
-  createNewUser
+  createNewUser,
+  deleteUser
 }
 
 // Sample only: think about what you want this function to actually do...
@@ -23,4 +24,9 @@ function createNewUser (username, password, db = connection) {
     .then(hash => db('users')
       .insert({username, password_hash: hash})
     )
+}
+
+// Delete user record.
+function deleteUser (id, db = connection) {
+  return db('users').where('users.id', id).del()
 }
