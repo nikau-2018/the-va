@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   text-transform: uppercase;
   font-size: 8vw;
-  font-family: 'Megrim';
+  font-family: 'Megrim', cursive;
 }
 
 h1 span {
