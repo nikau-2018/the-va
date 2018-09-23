@@ -3,6 +3,7 @@ const path = require('path')
 
 const users = require('./routes/users')
 const posts = require('./routes/posts')
+const util = require('./routes/util')
 
 const server = express()
 
@@ -19,6 +20,7 @@ server.use(function (req, res, next) {
 server.use(express.json())
 server.use('/api/v1/users', users)
 server.use('/api/v1/posts', posts)
+server.use('/api/v1/util', util)
 
 // In production, serve any request not covered by the above as the built index
 // from CRA's `yarn build` (for BrowserRouter)
