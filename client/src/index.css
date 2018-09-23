@@ -5,6 +5,14 @@ body {
   font-family: 'Megrim', cursive;
 }
 
+html {
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;    
+  height: 100%;
+  border-image: url("./images/triangle.png") 27 23 / 50px 30px / 1rem;
+  border-image-repeat: repeat;
+}
+
 .macron {
   text-decoration: overline;
 }
@@ -38,6 +46,14 @@ button {
   text-transform: uppercase;   */
 }
 
+/* .border {
+  border:red 1px solid;
+}
+
+.app {
+  display: flex;
+}
+ */
 .welcomeToTheVa {
   text-align: center;
   margin-top: 40%;
@@ -53,8 +69,9 @@ button {
   text-align: center;
 }
 
-/* .talanoa span {
-} */
+.talanoa span {
+  padding-bottom: 1em;
+}
 
 .talanoa .post {
   background-color: lightgreen;
@@ -79,4 +96,8 @@ button {
   background-image: url("./images/triangle.png");
   background-position: 0 1.06em;
   background-size: 10% 10%;
+}
+
+.cheekySkip {
+  text-align: center
 }
