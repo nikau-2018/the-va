@@ -8,7 +8,7 @@ body {
 .appleaves {
   position: fixed;
   top: -30%;
-  left: 0;
+  left: -5%;
   width: 100%;
 }
 
@@ -75,7 +75,7 @@ button {
   text-transform: none;  
 }
 
-.talanoa {
+.register-container, .login-container, .talanoa {
   margin-top: 20%;
   text-align: center;
 }
