@@ -75,7 +75,7 @@ button {
   text-transform: none;  
 }
 
-.register-container, .login-container, .talanoa {
+.register-container, .login-container, .cheekySkip, .createPost, .talanoa {
   margin-top: 20%;
   text-align: center;
 }

@@ -42,7 +42,7 @@ class CreatePost extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='createPost'>
         <h2>Create a Post</h2>
         <textarea placeholder="Enter your title here..." name="title" value={this.state.title} onChange={this.handleChange} /><br />
         <textarea placeholder="Display Name" name="displayName" value={this.state.displayName} onChange={this.handleChange} /><br />
