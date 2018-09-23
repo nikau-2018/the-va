@@ -1,41 +1,28 @@
 import React from 'react'
-// import {connect} from 'react-redux'
+import {connect} from 'react-redux'
 import request from 'axios'
 
-/* CHANGE empty parameter to ({posts}) once reducer is hooked up */
 class PostDetail extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      post: {},
       replies: []
     }
   }
 
   componentDidMount () {
-    this.getPostFromStore()
     this.getReplies()
   }
 
-  getPostFromStore () {
-    // TODO get post from redux store
-    this.setState({post: {
-      id: this.props.match.params.id
-    }
-    })
-    this.getReplies()
-  }
-
-  // TODO change api string to get post.id from state. requires
   getReplies () {
     request
-      .get(`http://localhost:3001/api/v1/posts/${this.props.match.params.id}`)
+      .get(`http://localhost:3001/api/v1/posts/${this.props.post.id}`)
       .then(res => {
         this.setState({
           replies: res.data.replies
         })
       })
-      /* eslint-disable no-console */
+    /* eslint-disable no-console */
       .catch(console.error)
   }
 
@@ -43,11 +30,12 @@ class PostDetail extends React.Component {
     return (
       <div>
         <div id='post-detail'>
-          <h1>{this.state.post.id}</h1>
+          <h1>{this.props.post.title}</h1>
+          <p>{this.props.post.body}</p>
+          <p>{this.props.post.displayName}</p>
         </div>
         <div id='replies'>
           {this.state.replies.map(reply => {
-            console.log(reply)
             return (
               <div key={reply.id} className='reply'><br />
                 <div><strong>{reply.displayName}</strong></div><br />
@@ -62,14 +50,13 @@ class PostDetail extends React.Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     posts: state.posts
-//   }
-// }
+const mapStateToProps = (state, props) => {
+  const [post] = state.posts.filter(post => {
+    return post.id !== props.match.params.id
+  })
+  return {
+    post
+  }
+}
 
-// export default connect(
-//   mapStateToProps
-// )(PostList)
-
-export default PostDetail
+export default connect(mapStateToProps)(PostDetail)
