@@ -5,40 +5,23 @@ body {
   font-family: 'Megrim', cursive;
 }
 
-/* html {
-  height: 100%;
-  border-left: 2em solid transparent;
-  border-right: 2em solid transparent;
-  padding: 1em;
-  margin: 5%;
-  border-image: url("./images/triangle.png") 0 100% repeat;
-  overflow: visible;
-} */
-
-html {
+.leaves {
   height: 100%;
   background-image: url("./images/leaves.png");
   background-origin: border-box;
   background-repeat: no-repeat;
   background-position: 0 -50%;
+}
+
+.border {
   border-left: 2em solid transparent;
   border-right: 2em solid transparent;
   border-image: url("./images/hearts-border.png");
-  border-image-slice: fill;
+  border-image-slice: 80% 80%;
   border-image-width: 50%;
-  border-image-outset: 13em;
+  border-image-outset: 20em;
   padding: 3em;
 }
-
-/* .leaves {
-  background-image: url("./images/leaves.png");
-
-  height: 100%;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
 
 .macron {
   text-decoration: overline;
