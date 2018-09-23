@@ -1,4 +1,5 @@
 const express = require('express')
+const verifyJwt = require('express-jwt')
 
 const router = express.Router()
 
@@ -11,6 +12,26 @@ function getPosts (req, res) {
     .then(posts => {
       res.status(200).json({posts})
     })
+    .catch(err => {
+      res.status(500).json(err)
+    })
+}
+
+// Secure route.
+router.get(
+  '/user',
+  verifyJwt({ secret: process.env.JWT_SECRET }),
+  getUserPosts
+  )
+
+// Get all users posts.
+function getUserPosts (req, res) {
+  db.getUsersPosts(req.user.id)
+    // Handle success.
+    .then(posts => {
+      res.status(200).json({posts})
+    })
+    // Handle errors.
     .catch(err => {
       res.status(500).json(err)
     })
