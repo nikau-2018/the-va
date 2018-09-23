@@ -5,7 +5,7 @@ body {
   font-family: 'Megrim', cursive;
 }
 
-html {
+/* html {
   height: 100%;
   border-left: 2em solid transparent;
   border-right: 2em solid transparent;
@@ -13,20 +13,25 @@ html {
   margin: 5%;
   border-image: url("./images/triangle.png") 0 100% repeat;
   overflow: visible;
+} */
+
+html {
+  height: 100%;
+  background-image: url("./images/leaves.png");
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-position: 0 -40%;
 }
 
-.leaves {
-  /* The image used */
+/* .leaves {
   background-image: url("./images/leaves.png");
 
-  /* Full height */
   height: 100%;
 
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 .macron {
   text-decoration: overline;
