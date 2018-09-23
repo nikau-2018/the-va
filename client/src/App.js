@@ -17,11 +17,14 @@ import CheekySkip from './components/CheekySkip'
 
 import CreatePostMain from './components/CreatePostMain'
 
+import leavesImage from './images/leaves.png'
+
 class App extends Component {
   render () {
     return (
       <Router>
-        <div className='app'>
+        <div className='border'>
+          <img className='appleaves' src={leavesImage}/>
           <Route exact path='/' component={WelcomePage} />
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />

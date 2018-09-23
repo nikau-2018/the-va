@@ -5,12 +5,18 @@ body {
   font-family: 'Rubik';
 }
 
-.leaves {
-  height: 100%;
-  background-image: url("./images/leaves.png");
-  background-origin: border-box;
-  background-repeat: no-repeat;
-  background-position: 0 -50%;
+.appleaves {
+  position: fixed;
+  top: -30%;
+  left: 0;
+  width: 100%;
+}
+
+.welcomeleaves {
+  position: fixed;
+  top: -18%;
+  left: 0;
+  width: 100%;
 }
 
 .border {
@@ -21,6 +27,8 @@ body {
   border-image-width: 50%;
   border-image-outset: 20em;
   padding: 3em;
+/*   position: relative;
+  z-index: 0; */
 }
 
 .macron {

@@ -1,9 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
+import leavesImage from '../../images/leaves.png'
+
 export default function WelcomePage (props) {
   return (
-    <div className='leaves border'>
+    <div>
+      <img className='welcomeleaves' src={leavesImage}/>
       <div className='welcomeToTheVa'>
         <h1>
         WELCOME <br />
