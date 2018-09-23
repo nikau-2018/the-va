@@ -29,7 +29,7 @@ class App extends Component {
           <Route path='/create' component={CreatePostMain} />
           <Route path='/home' component={Home} />
           <Route path='/village' component={Village} />
-          <Route path='/mypost' component={MyPost} />
+          {/* <Route path='/mypost' component={MyPost} /> */}
           <Route exact path='/postDetail/:id' component={PostDetail} />
           <Route path='/cheekySkip' component={CheekySkip} />
         </div>

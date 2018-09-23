@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   color: black;    
-  font-family: 'Megrim', cursive;
+  font-family: 'Rubik';
 }
 
 .leaves {
@@ -40,6 +40,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   text-transform: uppercase;
   font-size: 8vw;
+  font-family: 'Megrim', cursive;
 }
 
 h1 span {
