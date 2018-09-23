@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import request from 'axios'
 import {fetchPosts, fetchReplies} from '../actions'
 
 class PostDetail extends React.Component {
