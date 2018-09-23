@@ -20,7 +20,14 @@ html {
   background-image: url("./images/leaves.png");
   background-origin: border-box;
   background-repeat: no-repeat;
-  background-position: 0 -40%;
+  background-position: 0 -50%;
+  border-left: 2em solid transparent;
+  border-right: 2em solid transparent;
+  border-image: url("./images/hearts-border.png");
+  border-image-slice: fill;
+  border-image-width: 50%;
+  border-image-outset: 13em;
+  padding: 3em;
 }
 
 /* .leaves {
