@@ -16,12 +16,12 @@ function getUsers (db = connection) {
 
 // Retrieve a users record.
 function getUserById (id, db = connection) {
-  db('users').where({ id }).first()
+  return db('users').where({ id }).first()
 }
 
 // Retrieve a user by username.
 function getUserByUsername (username, db = connection) {
-  db('users').where({username}).first()
+  return db('users').where({username}).first()
 }
 
 // Create new user record.

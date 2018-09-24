@@ -1,5 +1,7 @@
 import request from 'axios'
 
+import {getHeaders} from '../util/api'
+
 export const SHOW_ERROR = 'SHOW_ERROR'
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 export const REQUEST_POSTS = 'REQUEST_POSTS'
@@ -45,7 +47,7 @@ export function fetchPosts () {
   return (dispatch) => {
     dispatch(requestPosts())
     return request
-      .get('http://localhost:3001/api/v1/posts')
+      .get('http://localhost:3001/api/v1/posts', { headers: getHeaders() })
       .then(res => {
         dispatch(receivePosts(res.data.posts))
       })
@@ -59,7 +61,7 @@ export function fetchReplies (id) {
   return (dispatch) => {
     dispatch(requestReplies())
     return request
-      .get(`http://localhost:3001/api/v1/posts/${id}`)
+      .get(`http://localhost:3001/api/v1/posts/${id}`, { headers: getHeaders() })
       .then(res => {
         dispatch(receiveReplies(res.data.replies))
       })

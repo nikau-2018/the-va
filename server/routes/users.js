@@ -106,16 +106,16 @@ function login (req, res, next) {
 
   return db.getUserByUsername(username)
     .then(user => {
-      if (user) {
+      if (!user) {
         return res.status(400).json({
           ok: false,
           error: 'That user does not exist.'
         })
       }
 
-      const {hash, id} = user
+      const {password_hash, id} = user
 
-      checkHash(hash, password)
+      checkHash(password_hash, password)
         .then(ok => {
           if (!ok) {
             return res.status(403).json({
