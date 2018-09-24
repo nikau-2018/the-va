@@ -71,7 +71,7 @@ button {
   text-transform: none;  
 }
 
-.register-container, .login-container, .cheekySkip, .createPost, .talanoa, .post-detail, .village, .home, .login-greeting {
+.register-container, .login-container, .cheekySkip, .createPost, .talanoa, .post-detail, .village, .home, .login-greeting, .deletePost {
   margin-top: 20%;
   text-align: center;
 }
