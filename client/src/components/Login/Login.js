@@ -37,7 +37,7 @@ class Login extends React.Component {
         <form>
           <p>Username: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Enter your username..." /></p>
           <p>Password: <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter your password..." /></p>
-          {/* TODO: Wire up login button*/}
+          {/* TODO: Wire up login button */}
           <p><button onClick={this.handleSubmit}>Log in</button></p>
           <Link to="/">Go Home</Link>
         </form>
