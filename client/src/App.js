@@ -35,7 +35,7 @@ class App extends Component {
           <Route path='/village' component={Village} />
           {/* <Route path='/mypost' component={MyPost} /> */}
           <Route exact path='/postDetail/:id' component={PostDetail} />
-          <Route exact path='/deletePost' component={DeletePost} />
+          <Route exact path='/postDetail/deletePost/:id' component={DeletePost} />
           <Route path='/cheekySkip' component={CheekySkip} />
         </div>
       </Router>
