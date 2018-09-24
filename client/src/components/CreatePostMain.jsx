@@ -5,6 +5,8 @@ import axios from 'axios'
 import {Redirect} from 'react-router'
 import randomDisplayName from '../utils/randomDisplayName'
 
+import {getHeaders} from '../util/api'
+
 class CreatePost extends React.Component {
   constructor (props) {
     super(props)
@@ -40,7 +42,7 @@ class CreatePost extends React.Component {
       }
     }
 
-    axios.post('/api/v1/posts/', postData)
+    axios.post('http://localhost:3001/api/v1/posts/', postData, {headers: getHeaders()})
       .then(response => {
         this.setState({done: true})
       })
