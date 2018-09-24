@@ -24,11 +24,10 @@ router.get(
   verifyJwt({ secret: process.env.JWT_SECRET }),
   getUsers)
 
-// Secure route.
 router.get(
-  '/user',
+  '/',
   verifyJwt({ secret: process.env.JWT_SECRET }),
-  getUser
+  getUsers
 )
 
 // Secure route.
@@ -39,29 +38,22 @@ router.delete(
 )
 
 function getUsers (req, res) {
-  res.json({ ok: true })
-}
-
-// Get user by ID.
-function getUser (req, res) {
-  // Query the DB passing the token users ID.
-  db.getUserById(req.user.id)
+  // Query the DB.
+  db.getUsers()
 
     // Handle success.
-    .then(({ username }) =>
-
-      // Return the username.
-      res.json({
+    .then(records =>
+      res.status(200).json({
         ok: true,
-        username
+        records
       })
     )
 
-    // Handle errors.
-    .catch(e =>
+    // Handle error.
+    .catch(() =>
       res.status(500).json({
         ok: false,
-        message: 'An error ocurred while retrieving your profile.'
+        message: 'An error occured while retrieving the users.'
       })
     )
 }
@@ -137,6 +129,7 @@ function login (req, res, next) {
 // Delete a users record.
 function deleteUser (req, res) {
   const id = Number(req.params.id)
+
   // Perform DB deletion.
   db.deleteUser(id)
 
@@ -147,6 +140,7 @@ function deleteUser (req, res) {
         message: 'User deleted successfully.'
       })
     })
+
     // Handle error.
     .catch(({ message }) => {
       // Internal server error.

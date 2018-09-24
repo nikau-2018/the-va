@@ -46,6 +46,13 @@ function getPosts (req, res) {
     })
 }
 
+// Secure route.
+router.get(
+  '/user',
+  verifyJwt({ secret: process.env.JWT_SECRET }),
+  getUserPosts
+)
+
 // Get all users posts.
 function getUserPosts (req, res) {
   db.getUsersPosts(req.user.id)
@@ -76,7 +83,7 @@ function submitPost (req, res) {
     .then(id => {
       res.status(201).json({
         ok: true,
-        postId: 9999
+        postId: id[0]
       })
     })
     .catch(err => {
@@ -96,5 +103,16 @@ function submitReply (req, res) {
       res.status(500).json(err)
     })
 }
+
+router.delete('/:id', (req, res) => {
+  const postId = req.params.id
+  db.deletePost(postId)
+    .then(() => {
+      res.json({})
+    })
+    .catch(err => {
+      res.status(500).json(err)
+    })
+})
 
 module.exports = router
