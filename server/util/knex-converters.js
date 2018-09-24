@@ -13,12 +13,14 @@ module.exports = {
   // doesn't handle some edge cases. For example, `CAPITAL_LETTERS` becomes
   // `CAPITALLETTERS` and not `capitalLetters`. For db column identifiers it
   // ought to do the trick though.
-  snakeToCamel: row =>
-    Object.keys(row).reduce((accumulator, identifier) => {
+  snakeToCamel: row => {
+    if (typeof row !== 'object' || row === null) return row
+    return Object.keys(row).reduce((accumulator, identifier) => {
       // Adjust the second character of each match to uppercase, so for example
       // `_x` becomes `X`
       const newI = identifier.replace(/_\w/g, match => match[1].toUpperCase())
       accumulator[newI] = row[identifier]
       return accumulator
     }, {})
+  }
 }
