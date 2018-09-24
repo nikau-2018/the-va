@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+const moment = require('moment')
 
 const Post = ({post}) => (
   <div>
@@ -8,6 +9,7 @@ const Post = ({post}) => (
     </Link>
     <h6>{post.displayName}</h6>
     <p>{new Date(post.date).toString()}</p>
+    <p>{moment.fromNow()}</p>
   </div>
 )
 
