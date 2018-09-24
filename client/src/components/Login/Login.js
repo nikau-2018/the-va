@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import { loginUser } from '../../actions/login';
+
 
 
 
@@ -25,7 +27,10 @@ class Login extends React.Component {
   }
 
   handleSubmit (e) {
-    this.props.login(this.state.username, this.state.password)
+    e.preventDefault();
+    this.props.dispatch(loginUser(this.state.username, this.state.password))
+    
+
   }
 
 // handleSubmit (e) {

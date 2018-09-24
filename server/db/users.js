@@ -1,5 +1,5 @@
 const connection = require('./')
-const generateHash = require('../auth/hash')
+const { generateHash }  = require('../auth/hash')
 
 module.exports = {
   getUsers,
