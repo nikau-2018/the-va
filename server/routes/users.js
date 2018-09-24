@@ -3,6 +3,7 @@ const verifyJwt = require('express-jwt')
 
 const token = require('../auth/token')
 const db = require('../db/users')
+const { createToken } = require('../auth/token')
 
 const router = express.Router()
 
@@ -12,14 +13,16 @@ router.post(
   token.issue
 )
 
+router.post('/login', login)
+
 router.get('/', getUsers)
 
 // Secure route.
-router.get(
-  '/user',
-  verifyJwt({ secret: process.env.JWT_SECRET }),
-  getUser
-)
+// router.get(
+//   '/user',
+//   verifyJwt({ secret: process.env.JWT_SECRET }),
+//   getUser
+// )
 
 // Secure route.
 router.delete(
@@ -28,33 +31,51 @@ router.delete(
 )
 
 function getUsers (req, res) {
-  res.json({ ok: true })
+
+    // Query the DB.
+    db.getUsers()
+
+    // Handle success.
+    .then(records => 
+        res.status(200).json({
+          ok: true,
+          records
+        })
+      )
+
+    // Handle error.
+    .catch(err => 
+      res.status(500).json({
+        ok: false,
+        message: 'An error occured while retrieving the users.'
+      })
+    )
 }
 
 // Get user by ID.
-function getUser (req, res) {
+// function getUser (req, res) {
 
-  // Query the DB passing the token users ID.
-  db.getUserById(req.user.id)
+//   // Query the DB passing the token users ID.
+//   db.getUserById(req.user.id)
 
-    // Handle success.
-    .then(({ username }) => 
+//     // Handle success.
+//     .then(({ username }) => 
 
-      // Return the username.
-      res.json({
-        ok: true,
-        username
-      })
-    )
+//       // Return the username.
+//       res.json({
+//         ok: true,
+//         username
+//       })
+//     )
 
-    // Handle errors.
-    .catch(e => 
-      res.status(500).json({
-        ok: false,
-        message: 'An error ocurred while retrieving your profile.'
-      })
-    )
-}
+//     // Handle errors.
+//     .catch(e => 
+//       res.status(500).json({
+//         ok: false,
+//         message: 'An error ocurred while retrieving your profile.'
+//       })
+//     )
+// }
 
 // Register a new user.
 function register (req, res, next) {
@@ -67,7 +88,7 @@ function register (req, res, next) {
 
     // Handle success.
     .then(([id]) => {
-
+      console.log(id)
       // Store the new users ID in local state.
       res.locals.userId = id
 
@@ -97,6 +118,7 @@ function register (req, res, next) {
 // Delete a users record.
 function deleteUser (req, res) {
   const id = Number(req.params.id)
+
   // Perform DB deletion.
   db.deleteUser(id)
 
@@ -107,6 +129,7 @@ function deleteUser (req, res) {
         message: 'User deleted successfully.'
       })
     })
+
     // Handle error.
     .catch(({ message }) => {
 
@@ -116,6 +139,56 @@ function deleteUser (req, res) {
         message: 'Something bad happened. We don\'t know why.'
       })
     })
+}
+
+// Login user.
+function login (req, res) {
+
+  // Getting the user information.
+  const { username, password } = req.body
+
+  // Return the user.
+  return db.getUser(username)
+    
+    // Handle success.
+    .then(user => {
+      // Check username exists.
+      if (!user) {
+        return res.status(400).json({
+          ok: false,
+          message: 'That user does not exist!.'
+        })
+      }
+
+      // Compare hash with user input password.
+      const { id, username, password_hash } = user
+
+      checkHash (password_hash, password) 
+        .then(ok => {
+          if (!ok) {
+            return res.status(403).json({
+              ok: false,
+              error: 'Password incorrect.'
+            })
+          }
+
+          // Get token.
+          const token = createToken(id)
+
+          // Return the user.
+          return res.status(201).json({
+            ok: true,
+            user: { id, username },
+            token
+          })
+        })
+    })
+
+    // Handle error.
+    .catch(() => res.status(500).json({
+      ok: false,
+      error: 'An unknown error occurred'
+    }))
 }
 
 module.exports = router

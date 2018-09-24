@@ -12,7 +12,8 @@ const jwt = require('jsonwebtoken')
 
 // File exports.
 module.exports = {
-  issue
+  issue,
+  createToken
 }
 
 // HELPER FUNCTIONS

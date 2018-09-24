@@ -3,7 +3,7 @@ const generateHash = require('../auth/hash')
 
 module.exports = {
   getUsers,
-  getUserById,
+  getUser,
   createNewUser,
   deleteUser
 }
@@ -14,8 +14,8 @@ function getUsers (db = connection) {
 }
 
 // Retrieve a users record.
-function getUserById (id, db = connection) {
-  db('users').where({ id }).first()
+function getUser (username, db = connection) {
+  db('users').where('username', username).first()
 }
 
 // Create new user record.
