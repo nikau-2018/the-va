@@ -87,7 +87,7 @@ class PostDetail extends React.Component {
 
 const mapStateToProps = (state, props) => {
   const [post] = state.posts.filter(post => {
-    return post.id !== props.match.params.id
+    return post.id == props.match.params.id
   })
   const replies = state.replies
   return {
