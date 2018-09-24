@@ -3,6 +3,9 @@ import request from 'axios'
 export const SHOW_ERROR = 'SHOW_ERROR'
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 export const REQUEST_POSTS = 'REQUEST_POSTS'
+export const RECEIVE_REPLIES = 'RECEIVE_REPLIES'
+export const REQUEST_REPLIES = 'REQUEST_REPLIES'
+export const JUST_LOGGED_IN = 'JUST_LOGGED_IN'
 
 export const requestPosts = () => {
   return {
@@ -15,6 +18,20 @@ export const receivePosts = (posts) => {
   return {
     type: RECEIVE_POSTS,
     posts: posts
+  }
+}
+
+export const requestReplies = () => {
+  return {
+    type: REQUEST_REPLIES
+  }
+}
+
+export const receiveReplies = (replies) => {
+  console.log(replies)
+  return {
+    type: RECEIVE_REPLIES,
+    replies: replies
   }
 }
 
@@ -36,5 +53,25 @@ export function fetchPosts () {
       .catch(err => {
         dispatch(showError(err.message))
       })
+  }
+}
+
+export function fetchReplies (id) {
+  return (dispatch) => {
+    dispatch(requestReplies())
+    return request
+      .get(`http://localhost:3001/api/v1/posts/${id}`)
+      .then(res => {
+        dispatch(receiveReplies(res.data.replies))
+      })
+      .catch(err => {
+        dispatch(showError(err.message))
+      })
+  }
+}
+
+export const justLoggedIn = () => {
+  return {
+    type: JUST_LOGGED_IN
   }
 }

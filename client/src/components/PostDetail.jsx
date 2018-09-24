@@ -1,35 +1,22 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import request from 'axios'
 import {Link} from 'react-router-dom'
+import {fetchPosts, fetchReplies} from '../actions'
 
 class PostDetail extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {
-      replies: []
-    }
+    this.state = {}
   }
 
   componentDidMount () {
-    this.getReplies()
-  }
-
-  getReplies () {
-    request
-      .get(`/api/v1/posts/${this.props.post.id}`)
-      .then(res => {
-        this.setState({
-          replies: res.data.replies
-        })
-      })
-    /* eslint-disable no-console */
-      .catch(console.error)
+    this.props.dispatch(fetchPosts())
+    this.props.dispatch(fetchReplies(this.props.match.params.id))
   }
 
   render () {
     return (
-      <div>
+      <div className='post-detail'>
         <div id='post-detail'>
           <h1>{this.props.post.title}</h1>
           <p>{this.props.post.body}</p>
@@ -37,7 +24,7 @@ class PostDetail extends React.Component {
           <Link to ={`deletePost/${this.props.post.id}`}><button onClick={this.handleClick}>delete post</button></Link>
         </div>
         <div id='replies'>
-          {this.state.replies.map(reply => {
+          {this.props.replies.map(reply => {
             return (
               <div key={reply.id} className='reply'><br />
                 <div><strong>{reply.displayName}</strong></div><br />
@@ -56,8 +43,10 @@ const mapStateToProps = (state, props) => {
   const [post] = state.posts.filter(post => {
     return post.id !== props.match.params.id
   })
+  const replies = state.replies
   return {
-    post
+    post,
+    replies
   }
 }
 
