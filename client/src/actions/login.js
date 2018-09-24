@@ -1,7 +1,7 @@
 import request from 'axios'
 import { dispatch } from '../../../node_modules/rxjs/internal/observable/pairs';
 
-import {getHeader} from '../utils/api'
+import {getHeaders} from '../utils/api'
 import {setToken} from '../utils/token'
 
 export const LOGIN_REQUEST = 'LOGIN_REQUEST'
@@ -15,26 +15,28 @@ export const loginSuc = user => ({
     user
 })
 
+export const loginReq = ({
+    type: LOGIN_REQUEST
+   
+})
+
 export const loginUser = (username, password) => {
     return dispatch => {
-        dispatch(loginSuc())
+        //dispatch(loginReq())
         return request
-        .post(`/api/v1/user/login`, {username, password}, getHeaders())
+        .post(`/api/v1/users/login`, {username, password}, getHeaders())
         .then(res => {
           if (res.data.token) {
             setToken(res.data.token)
           }
   
-          dispatch(signIn(res.data.user))
+          dispatch(loginSuc(res.data.user))
         })
         .catch(({response}) => dispatch(loginError(response.data.error)))
     }
 }
 
-export const signInError = error => ({
+export const loginError = error => ({
     type: LOGIN_ERROR,
     error
   })
-
-
-

@@ -56,7 +56,10 @@ export class Register extends React.Component {
     render () {
       return (
         <div className='register-container'>
-          <h1>Register for The Vā</h1>
+          <h1>
+                    Register for <br />
+                    The Vā
+          </h1>
           <div className='form'>
             <p>Name: <input type='text' name='username' onChange={this.handleChange} placeholder="Enter a username..." value={this.state.username} /></p>
             <p>Password: <input type='password' name='password' onChange={this.handleChange} placeholder="Enter a password..." value={this.state.password} /></p>
@@ -65,7 +68,6 @@ export class Register extends React.Component {
             <Link to="/">Go Home</Link>
           </div>
         </div>
-
       )
     }
 }

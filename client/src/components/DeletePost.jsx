@@ -34,7 +34,7 @@ export default class DeletePost extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='deletePost'>
         <h1>Are you sure you want to delete this post?</h1>
         <button onClick={this.handleBack}>back</button>
         <button onClick={this.handleDelete}>delete</button>
