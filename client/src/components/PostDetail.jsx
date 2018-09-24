@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import {fetchPosts, fetchReplies} from '../actions'
 
 class PostDetail extends React.Component {
@@ -20,6 +21,7 @@ class PostDetail extends React.Component {
           <h1>{this.props.post.title}</h1>
           <p>{this.props.post.body}</p>
           <p>{this.props.post.displayName}</p>
+          <Link to ={`deletePost/${this.props.post.id}`}><button onClick={this.handleClick}>delete post</button></Link>
         </div>
         <div id='replies'>
           {this.props.replies.map(reply => {

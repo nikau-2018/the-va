@@ -5,7 +5,8 @@ module.exports = {
   getReplies,
   submitPost,
   submitReply,
-  getUsersPosts
+  getUsersPosts,
+  deletePost
 }
 
 // Sample only: think about what you want this function to actually do...
@@ -15,7 +16,7 @@ function getPosts (db = connection) {
 }
 
 // Get users posts.
-function getUsersPosts (userId, db = connection ) {
+function getUsersPosts (userId, db = connection) {
   return db('posts')
     .where('posts.user_id', userId)
     .select()
@@ -37,4 +38,8 @@ function submitReply (replyData, db = connection) {
   replyData.createdAt = Date.now()
   return db('replies')
     .insert(replyData)
+}
+
+function deletePost (postId, db = connection) {
+  return db('posts').where('id', postId).del()
 }
