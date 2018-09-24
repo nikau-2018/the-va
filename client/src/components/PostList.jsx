@@ -19,7 +19,11 @@ class PostList extends React.Component {
   render () {
     return (
       <div className='talanoa'>
-        <h2><span className='underline underlineTriangles'>Talanoa</span></h2>
+        <h2>
+          <span className='underline underlineTriangles'>
+            Talanoa
+          </span>
+        </h2>
         {this.props.posts.map((post) =>
           <Post
             key={post.id}
