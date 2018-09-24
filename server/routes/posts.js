@@ -22,7 +22,7 @@ router.get(
   '/user',
   verifyJwt({ secret: process.env.JWT_SECRET }),
   getUserPosts
-  )
+)
 
 // Get all users posts.
 function getUserPosts (req, res) {
@@ -80,5 +80,16 @@ function submitReply (req, res) {
       res.status(500).json(err)
     })
 }
+
+router.delete('/:id', (req, res) => {
+  const postId = req.params.id
+  db.deletePost(postId)
+    .then(() => {
+      res.json({})
+    })
+    .catch(err => {
+      res.status(500).json(err)
+    })
+})
 
 module.exports = router
