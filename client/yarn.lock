@@ -5463,6 +5463,10 @@ react-router@^4.3.1:
     prop-types "^15.6.1"
     warning "^4.0.1"
 
+react-soundcloud@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/react-soundcloud/-/react-soundcloud-0.1.1.tgz#0e8d52d914d576f85126e38df4b64e76de5b5d77"
+
 react-test-renderer@^16.0.0-0:
   version "16.5.2"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.5.2.tgz#92e9d2c6f763b9821b2e0b22f994ee675068b5ae"

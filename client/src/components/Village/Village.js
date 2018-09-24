@@ -1,14 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
+
+import ReactSoundcloud from 'react-soundcloud'
 
 const Village = (props) => {
   return (
     <div className='village'>
-      <h1> Helo dear User here is some useful links for you </h1>
-      <a href='https://www.google.com'> Put some useful staff here </a>
-      <a href='https://www.google.com'> here too</a>
-      <a href='https://www.google.com'> and dont forget put here as well </a>
-      <Link to="/main">Return to main</Link>
+      <h2><span className='underline underlineTriangles'>Talanoa</span></h2>
+      React.render(<ReactSoundcloud url="https://soundcloud.com/jahrarager/a-first-reading-i-say-my-name-with-a-mouth-full-of-dirt"/>
     </div>
   )
 }
