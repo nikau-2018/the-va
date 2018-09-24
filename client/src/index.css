@@ -109,3 +109,8 @@ button {
   background-position: 0 1.06em;
   background-size: 10% 10%;
 }
+
+.fromDate {
+  font-size: 1.8vw;
+  font-style: italic;
+}
