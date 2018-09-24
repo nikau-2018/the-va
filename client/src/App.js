@@ -12,7 +12,7 @@ import DeletePost from './components/DeletePost'
 import Home from './components/Home/Home'
 import PostList from './components/PostList'
 import Village from './components/Village/Village'
-import MyPost from './components/MyPost'
+import MyPosts from './components/MyPosts'
 import CheekySkip from './components/CheekySkip'
 
 import CreatePostMain from './components/CreatePostMain'
@@ -32,7 +32,7 @@ class App extends Component {
           <Route path='/create' component={CreatePostMain} />
           <Route path='/home' component={Home} />
           <Route path='/village' component={Village} />
-          {/* <Route path='/mypost' component={MyPost} /> */}
+          <Route path='/myposts' component={MyPosts} />
           <Route exact path='/postDetail/:id' component={PostDetail} />
           <Route exact path='/postDetail/deletePost/:id' component={DeletePost} />
           <Route path='/cheekySkip' component={CheekySkip} />

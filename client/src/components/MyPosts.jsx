@@ -2,26 +2,27 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import {fetchPosts} from '../actions/index'
+import {fetchUserPosts} from '../actions'
 
 import Post from './Post'
 
-class PostList extends React.Component {
+class MyPosts extends React.Component {
   constructor (props) {
     super(props)
     this.state = {}
   }
 
   componentDidMount () {
-    this.props.dispatch(fetchPosts())
+    this.props.dispatch(fetchUserPosts())
   }
 
   render () {
+    console.log('this.props.post is', this.props.post)
     return (
-      <div className='talanoa'>
+      <div className='myposts'>
         <h2>
           <span className='underline underlineTriangles'>
-            Talanoa
+            My Posts
           </span>
         </h2>
         {this.props.posts.map((post) =>
@@ -44,4 +45,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(PostList)
+export default connect(mapStateToProps)(MyPosts)

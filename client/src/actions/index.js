@@ -72,6 +72,21 @@ export function fetchReplies (id) {
   }
 }
 
+// WORK IN PROGRESS - ALISA
+export function fetchUserPosts () {
+  return (dispatch) => {
+    dispatch(requestPosts())
+    return request
+      .get('http://localhost:3001/api/v1/posts/user')
+      .then(res => {
+        dispatch(receivePosts(res.data.posts))
+      })
+      .catch(err => {
+        dispatch(showError(err.message))
+      })
+  }
+}
+
 export const justLoggedIn = () => {
   return {
     type: JUST_LOGGED_IN

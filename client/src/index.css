@@ -58,7 +58,7 @@ h1 span {
 button {
   border: 0px;
   width: 70%;
-  background-color: lightgreen;        
+  background-color: lightgreen;      
   color: black;  
   border-radius: 0px;
 /*   Below is needed if we remove skeleton:
@@ -75,7 +75,7 @@ button {
   text-transform: none;  
 }
 
-.register-container, .login-container, .cheekySkip, .createPost, .talanoa, .post-detail, .village, .home, .login-greeting, .deletePost {
+.register-container, .login-container, .cheekySkip, .createPost, .talanoa, .post-detail, .village, .home, .login-greeting, .deletePost, .myposts {
   margin-top: 20%;
   text-align: center;
 }
