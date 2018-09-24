@@ -1,5 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
+
 import {fetchPosts} from '../actions/index'
 
 import Post from './Post'
@@ -24,6 +26,9 @@ class PostList extends React.Component {
             post={post}
           />
         )}
+        <Link to="/home">
+          <button className='homeButton'>Home</button>
+        </Link>
       </div>
     )
   }

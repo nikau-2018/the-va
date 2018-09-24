@@ -57,8 +57,8 @@ export class Register extends React.Component {
       return (
         <div className='register-container'>
           <h1>
-                    Register for <br />
-                    The Vā
+            Register for <br />
+            The Vā
           </h1>
           <div className='form'>
             <p>Name: <input type='text' name='username' onChange={this.handleChange} placeholder="Enter a username..." value={this.state.username} /></p>

@@ -20,6 +20,10 @@ body {
   width: 100%;
 }
 
+.homeButton {
+  margin: 15%;
+}
+
 .border {
   border-left: 2em solid transparent;
   border-right: 2em solid transparent;

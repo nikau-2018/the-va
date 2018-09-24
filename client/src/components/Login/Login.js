@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { loginUser } from '../../actions/login'
+import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {loginUser} from '../../actions/login'
 
 class Login extends React.Component {
   constructor (props) {
@@ -37,11 +37,15 @@ class Login extends React.Component {
           The Vā
         </h1>
         <form>
-          <p>Username: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Enter your username..." /></p>
-          <p>Password: <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter your password..." /></p>
+          <p>
+            Username: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Enter your username..." /><br />
+            Password: <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter your password..." />
+          </p>
           {/* TODO: Wire up login button */}
-          <p><button onClick={this.handleSubmit}>Log in</button></p>
-          <Link to="/">Go Home</Link>
+          <button onClick={this.handleSubmit}>Log in</button>
+          <Link to="/">
+            <button>Back</button>
+          </Link>
         </form>
       </div>
     )
