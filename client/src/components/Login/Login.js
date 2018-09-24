@@ -38,8 +38,8 @@ class Login extends React.Component {
         </h1>
         <form>
           <p>
-            Username: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Enter your username..." /><br />
-            Password: <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter your password..." />
+            Username:<br /><input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Enter your username..." /><br />
+            Password:<br /><input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter your password..." />
           </p>
           {/* TODO: Wire up login button */}
           <button onClick={this.handleSubmit}>Log in</button>

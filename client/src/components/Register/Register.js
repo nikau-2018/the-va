@@ -61,11 +61,15 @@ export class Register extends React.Component {
             The Vā
           </h1>
           <div className='form'>
-            <p>Name: <input type='text' name='username' onChange={this.handleChange} placeholder="Enter a username..." value={this.state.username} /></p>
-            <p>Password: <input type='password' name='password' onChange={this.handleChange} placeholder="Enter a password..." value={this.state.password} /></p>
-            <p>Confirm password: <input type='password' name='confirmPassword' onChange={this.handleChange} placeholder="Re-enter password..." value={this.state.confirmPassword} /></p>
-            <p><button onClick={this.handleClick}>Register</button></p>
-            <Link to="/">Go Home</Link>
+            <p>
+              Name:<br /><input type='text' name='username' onChange={this.handleChange} placeholder="Enter a username..." value={this.state.username} /><br />
+              Password:<br /><input type='password' name='password' onChange={this.handleChange} placeholder="Enter a password..." value={this.state.password} /><br />
+              Confirm password:<br /><input type='password' name='confirmPassword' onChange={this.handleChange} placeholder="Re-enter password..." value={this.state.confirmPassword} />
+            </p>
+            <button onClick={this.handleClick}>Register</button>
+            <Link to="/">
+              <button>Back</button>
+            </Link>
           </div>
         </div>
       )
