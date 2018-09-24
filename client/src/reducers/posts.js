@@ -1,6 +1,6 @@
 import {RECEIVE_POSTS} from '../actions/index'
 
-function posts (state = [], action) {
+function posts (state = [{}], action) {
   switch (action.type) {
     case RECEIVE_POSTS:
       return action.posts
