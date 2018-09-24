@@ -15,7 +15,7 @@ class PostDetail extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='post-detail'>
         <div id='post-detail'>
           <h1>{this.props.post.title}</h1>
           <p>{this.props.post.body}</p>

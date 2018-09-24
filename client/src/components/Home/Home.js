@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 export default function Home (props) {
   return (
-    <div className="container">
+    <div className="home">
       <h1>Rules</h1>
       <p>Please read through the following rules and abide by them to ensure a safe community:</p>
       <ul>
