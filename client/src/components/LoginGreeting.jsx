@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom'
 const LoginGreeting = (props) => (
   <div className='login-greeting'>
     <h6>
-      Bula and welcome to The Vā!
+      Bula and welcome to <br/>
+      The Vā!
     </h6>
     <p>
       We hope that this community becomes a safe space for you to express yourself and navigate the complex place that is Vā.
