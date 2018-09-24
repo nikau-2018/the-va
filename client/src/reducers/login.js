@@ -9,7 +9,7 @@ import {
         user: null
     }
 
-export default function (state = defaultState, { action, error, type, user }) {
+export default function loginReducers (state = defaultState, { action, error, type, user }) {
     switch (type) {
         case LOGIN_REQUEST:
             return {
