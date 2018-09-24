@@ -1,11 +1,9 @@
-import {JUST_LOGGED_IN} from '../actions/index'
+import {JUST_LOGGED_IN} from '../actions'
 
-function justLoggedIn (state = '', action) {
+function justLoggedIn (state = true, action) {
   switch (action.type) {
     case JUST_LOGGED_IN:
-      return {
-        justLoggedIn: true
-      }
+      return false
 
     default:
       return state

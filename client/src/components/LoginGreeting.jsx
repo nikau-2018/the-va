@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const LoginGreeting = () => (
+const LoginGreeting = (props) => (
   <div className='login-greeting'>
     <h6>
       Bula and welcome to The Vā!
@@ -13,7 +13,7 @@ const LoginGreeting = () => (
       Vā is the space between, not empty space, not space that separates but space that relates and holds separate things together.
     </p>
     <Link to="/home">
-      <button>Continue</button>
+      <button onClick={props.dismissLoginGreeting} >Continue</button>
     </Link>
   </div>
 )

@@ -1,21 +1,26 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import LoginGreeting from '../LoginGreeting'
 
+import {justLoggedIn} from '../../actions'
+
 class Home extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {
-      justLoggedIn: false
-    }
+    this.dismissLoginGreeting = this.dismissLoginGreeting.bind(this)
   }
 
-  // onClick
+  dismissLoginGreeting () {
+    this.props.dispatch(justLoggedIn())
+  }
 
   render () {
-    return (
-      <div className="home">
+    const {justLoggedIn} = this.props
+    return justLoggedIn
+      ? <LoginGreeting dismissLoginGreeting={this.dismissLoginGreeting} />
+      : <div className="home">
         <h1>Rules</h1>
         <p>Please read through the following rules and abide by them to ensure a safe community:</p>
         <ul>
@@ -23,7 +28,6 @@ class Home extends React.Component {
           <li>Be kind</li>
           <li>Be respectful</li>
         </ul>
-        <LoginGreeting />
         <div className="bottom-tabs">
           <Link to="/myposts">
             <button>Me</button>
@@ -36,8 +40,13 @@ class Home extends React.Component {
           </Link>
         </div>
       </div>
-    )
   }
 }
 
-export default Home
+function mapStateToProps (state) {
+  return {
+    justLoggedIn: state.justLoggedIn
+  }
+}
+
+export default connect(mapStateToProps)(Home)

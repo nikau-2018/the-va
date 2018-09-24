@@ -70,7 +70,7 @@ export function fetchReplies (id) {
   }
 }
 
-export const loggedIn = () => {
+export const justLoggedIn = () => {
   return {
     type: JUST_LOGGED_IN
   }
