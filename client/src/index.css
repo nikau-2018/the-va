@@ -58,7 +58,7 @@ h1 span {
 button {
   border: 0px;
   width: 70%;
-  background-color: lightgreen;        
+  background-color: lightgreen;      
   color: black;  
   border-radius: 0px;
 /*   Below is needed if we remove skeleton:
