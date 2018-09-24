@@ -1,6 +1,7 @@
 export function setToken (token) {
-    localStorage.setItem('_VA_JWT', token)
+    localStorage.setItem('_THE_VA_JWT', token)
 }
-export function creatToken () {
-    return localStorage.getItem('_VA_JWT')
+
+export function getToken () {
+    return localStorage.getItem('_THE_VA_JWT')
 }
