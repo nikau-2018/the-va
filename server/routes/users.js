@@ -1,6 +1,7 @@
 const express = require('express')
 const verifyJwt = require('express-jwt')
 
+const {checkHash} = require('../auth/hash')
 const token = require('../auth/token')
 const db = require('../db/users')
 
@@ -12,7 +13,16 @@ router.post(
   token.issue
 )
 
-router.get('/', getUsers)
+router.post(
+  '/login',
+  login,
+  token.issue
+)
+
+router.get(
+  '/',
+  verifyJwt({ secret: process.env.JWT_SECRET }),
+  getUsers)
 
 // Secure route.
 router.get(
@@ -24,6 +34,7 @@ router.get(
 // Secure route.
 router.delete(
   '/user/:id',
+  verifyJwt({ secret: process.env.JWT_SECRET }),
   deleteUser
 )
 
@@ -33,12 +44,11 @@ function getUsers (req, res) {
 
 // Get user by ID.
 function getUser (req, res) {
-
   // Query the DB passing the token users ID.
   db.getUserById(req.user.id)
 
     // Handle success.
-    .then(({ username }) => 
+    .then(({ username }) =>
 
       // Return the username.
       res.json({
@@ -48,7 +58,7 @@ function getUser (req, res) {
     )
 
     // Handle errors.
-    .catch(e => 
+    .catch(e =>
       res.status(500).json({
         ok: false,
         message: 'An error ocurred while retrieving your profile.'
@@ -58,16 +68,14 @@ function getUser (req, res) {
 
 // Register a new user.
 function register (req, res, next) {
-
   // Get post data to be stored.
-  const {username, password} =  req.body
+  const {username, password} = req.body
 
   // Perform insertion.
   db.createNewUser(username, password)
 
     // Handle success.
     .then(([id]) => {
-
       // Store the new users ID in local state.
       res.locals.userId = id
 
@@ -78,7 +86,6 @@ function register (req, res, next) {
     // Handle errors.
     .catch(({ message }) => {
       if (message.includes('UNIQUE constraint failed: users.username')) {
-
         // Error if username exists in DB.
         return res.status(400).json({
           ok: false,
@@ -92,6 +99,39 @@ function register (req, res, next) {
         message: 'Something bad happened. We don\'t know why.'
       })
     })
+}
+
+function login (req, res, next) {
+  const {username, password} = req.body
+
+  return db.getUserByUsername(username)
+    .then(user => {
+      if (user) {
+        return res.status(400).json({
+          ok: false,
+          error: 'That user does not exist.'
+        })
+      }
+
+      const {hash, id} = user
+
+      checkHash(hash, password)
+        .then(ok => {
+          if (!ok) {
+            return res.status(403).json({
+              ok: false,
+              error: 'Password incorrect.'
+            })
+          }
+
+          res.locals.userId = id
+          next()
+        })
+    })
+    .catch(() => res.status(500).json({
+      ok: false,
+      error: 'An unknown error occurred.'
+    }))
 }
 
 // Delete a users record.
@@ -109,7 +149,6 @@ function deleteUser (req, res) {
     })
     // Handle error.
     .catch(({ message }) => {
-
       // Internal server error.
       res.status(500).json({
         ok: false,
