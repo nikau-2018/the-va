@@ -2,16 +2,51 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {fetchPosts, fetchReplies} from '../actions'
+import request from 'axios'
 
 class PostDetail extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {}
+    this.state = {
+      displayName: '',
+      replyText: ''
+    }
   }
 
   componentDidMount () {
     this.props.dispatch(fetchPosts())
     this.props.dispatch(fetchReplies(this.props.match.params.id))
+    this.getRandomDisplayName()
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  getRandomDisplayName () {
+    return request
+      .get('http://localhost:3001/api/v1/util/randomDisplayName')
+      .then(res => {
+        this.setState({displayName: res.data.displayName})
+      })
+  }
+
+  handleSubmit = () => {
+    const replyData = {
+      replyData: {
+        postId: this.props.match.params.id, 
+        userId: 1000,
+        displayName: this.state.displayName,
+        text: this.state.replyText
+      }
+    }
+
+    request.post('http://localhost:3001/api/v1/posts/reply', replyData)
+      .then(() => {
+        this.props.dispatch(fetchReplies(this.props.match.params.id))
+      })
   }
 
   render () {
@@ -38,6 +73,12 @@ class PostDetail extends React.Component {
               </div>
             )
           })}
+        </div>
+        <div id="reply-box">
+          <h3>Add a reply:</h3>
+          <p>Posting as: {this.state.displayName}</p>
+          <textarea name='replyText' onChange={this.handleChange} />
+          <button onClick={this.handleSubmit}>Submit</button>
         </div>
       </div>
     )
