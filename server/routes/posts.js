@@ -5,7 +5,36 @@ const router = express.Router()
 
 const db = require('../db/posts')
 
-router.get('/', getPosts)
+router.get(
+  '/',
+  verifyJwt({ secret: process.env.JWT_SECRET }),
+  getPosts
+)
+
+// Secure route.
+router.get(
+  '/user',
+  verifyJwt({ secret: process.env.JWT_SECRET }),
+  getUserPosts
+)
+
+router.get(
+  '/:id',
+  verifyJwt({ secret: process.env.JWT_SECRET }),
+  getReplies
+)
+
+router.post(
+  '/',
+  verifyJwt({ secret: process.env.JWT_SECRET }),
+  submitPost
+)
+
+router.post(
+  '/reply',
+  verifyJwt({ secret: process.env.JWT_SECRET }),
+  submitReply
+)
 
 function getPosts (req, res) {
   db.getPosts()
@@ -37,8 +66,6 @@ function getUserPosts (req, res) {
     })
 }
 
-router.get('/:id', getReplies)
-
 function getReplies (req, res) {
   const postId = req.params.id
   db.getReplies(postId)
@@ -49,8 +76,6 @@ function getReplies (req, res) {
       res.status(500).json(err)
     })
 }
-
-router.post('/', submitPost)
 
 function submitPost (req, res) {
   const postData = req.body.postData
@@ -65,8 +90,6 @@ function submitPost (req, res) {
       res.status(500).json(err)
     })
 }
-
-router.post('/reply', submitReply)
 
 function submitReply (req, res) {
   const replyData = req.body.replyData
