@@ -26,8 +26,8 @@ class PostList extends React.Component {
             post={post}
           />
         )}
-        <Link to="/list">
-          <button className='backButton'>Back</button>
+        <Link to="/home">
+          <button className='homeButton'>Home</button>
         </Link>
       </div>
     )
