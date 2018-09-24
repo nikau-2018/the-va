@@ -8,6 +8,7 @@ import WelcomePage from './components/Welcome/WelcomePage'
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
 import PostDetail from './components/PostDetail'
+import DeletePost from './components/DeletePost'
 
 import Home from './components/Home/Home'
 import PostList from './components/PostList'
@@ -34,6 +35,7 @@ class App extends Component {
           <Route path='/village' component={Village} />
           {/* <Route path='/mypost' component={MyPost} /> */}
           <Route exact path='/postDetail/:id' component={PostDetail} />
+          <Route exact path='/postDetail/deletePost/:id' component={DeletePost} />
           <Route path='/cheekySkip' component={CheekySkip} />
         </div>
       </Router>
