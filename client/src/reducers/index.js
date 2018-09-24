@@ -1,7 +1,13 @@
 import {combineReducers} from 'redux'
 
-import users from './users'
+import errorMessage from './error-message'
+import posts from './posts'
+import replies from './replies'
+import waiting from './waiting'
 
 export default combineReducers({
-  users
+  errorMessage,
+  posts,
+  replies,
+  waiting
 })

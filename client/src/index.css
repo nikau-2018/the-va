@@ -1,5 +1,111 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  color: black;    
+  font-family: 'Rubik';
+}
+
+.appleaves {
+  position: fixed;
+  top: -30%;
+  left: -5%;
+  width: 100%;
+}
+
+.welcomeleaves {
+  position: fixed;
+  top: -18%;
+  left: 0;
+  width: 100%;
+}
+
+.border {
+  border-left: 2em solid transparent;
+  border-right: 2em solid transparent;
+  border-image: url("./images/hearts-border.png");
+  border-image-slice: 80% 80%;
+  border-image-width: 50%;
+  border-image-outset: 20em;
+  padding: 3em;
+/*   position: relative;
+  z-index: 0; */
+}
+
+.macron {
+  text-decoration: overline;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+}
+
+a:hover {
+  color: darkgreen;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 8vw;
+  font-family: 'Megrim', cursive;
+}
+
+h1 span {
+  font-size: 9vw;
+}
+
+button {
+  border: 0px;
+  width: 70%;
+  background-color: lightgreen;        
+  color: black;  
+  border-radius: 0px;
+/*   Below is needed if we remove skeleton:
+  text-transform: uppercase;   */
+}
+
+.welcomeToTheVa {
+  text-align: center;
+  margin-top: 40%;
+}
+
+.welcomeToTheVa h1 {
+  padding: 10%;
+  text-transform: none;  
+}
+
+.register-container, .login-container, .cheekySkip, .createPost, .talanoa, .post-detail, .village, .home {
+  margin-top: 20%;
+  text-align: center;
+}
+
+.talanoa span {
+  padding-bottom: 1em;
+}
+
+/* Speech bubbles */
+.talanoa .post {
+  background-color: lightgreen;
+  border-top-left-radius: 5em;
+  border-top-right-radius: 5em;
+  border-bottom-right-radius: 5em;
+  overflow-wrap: normal;
+  margin: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 5%;
+  font-size: 2vw;
+  display:inline-block;
+  text-align: left;
+}
+
+.underline {
+  background-repeat: repeat-x;
+}
+
+.underlineTriangles {
+  background-image: url("./images/triangle.png");
+  background-position: 0 1.06em;
+  background-size: 10% 10%;
 }
