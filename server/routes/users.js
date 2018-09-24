@@ -4,6 +4,7 @@ const verifyJwt = require('express-jwt')
 const token = require('../auth/token')
 const db = require('../db/users')
 const { createToken } = require('../auth/token')
+const { checkHash } = require('../auth/hash')
 
 const router = express.Router()
 
@@ -16,13 +17,6 @@ router.post(
 router.post('/login', login)
 
 router.get('/', getUsers)
-
-// Secure route.
-// router.get(
-//   '/user',
-//   verifyJwt({ secret: process.env.JWT_SECRET }),
-//   getUser
-// )
 
 // Secure route.
 router.delete(
@@ -51,31 +45,6 @@ function getUsers (req, res) {
       })
     )
 }
-
-// Get user by ID.
-// function getUser (req, res) {
-
-//   // Query the DB passing the token users ID.
-//   db.getUserById(req.user.id)
-
-//     // Handle success.
-//     .then(({ username }) => 
-
-//       // Return the username.
-//       res.json({
-//         ok: true,
-//         username
-//       })
-//     )
-
-//     // Handle errors.
-//     .catch(e => 
-//       res.status(500).json({
-//         ok: false,
-//         message: 'An error ocurred while retrieving your profile.'
-//       })
-//     )
-// }
 
 // Register a new user.
 function register (req, res, next) {
@@ -149,7 +118,7 @@ function login (req, res) {
 
   // Return the user.
   return db.getUser(username)
-    
+
     // Handle success.
     .then(user => {
       // Check username exists.
@@ -159,10 +128,10 @@ function login (req, res) {
           message: 'That user does not exist!.'
         })
       }
-
+      
       // Compare hash with user input password.
       const { id, username, password_hash } = user
-
+      
       checkHash (password_hash, password) 
         .then(ok => {
           if (!ok) {

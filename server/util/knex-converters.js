@@ -15,7 +15,7 @@ module.exports = {
   // ought to do the trick though.
   snakeToCamel: row => {
     if (typeof row !== 'object' || row === null) return row
-    Object.keys(row).reduce((accumulator, identifier) => {
+    return Object.keys(row).reduce((accumulator, identifier) => {
       // Adjust the second character of each match to uppercase, so for example
       // `_x` becomes `X`
       const newI = identifier.replace(/_\w/g, match => match[1].toUpperCase())

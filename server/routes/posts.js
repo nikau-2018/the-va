@@ -58,7 +58,7 @@ function submitPost (req, res) {
     .then(id => {
       res.status(201).json({
         ok: true,
-        postId: 9999
+        postId: id[0]
       })
     })
     .catch(err => {

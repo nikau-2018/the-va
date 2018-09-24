@@ -15,7 +15,7 @@ function getUsers (db = connection) {
 
 // Retrieve a users record.
 function getUser (username, db = connection) {
-  db('users').where('username', username).first()
+  return db('users').where('username', username).first()
 }
 
 // Create new user record.
