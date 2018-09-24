@@ -3,6 +3,7 @@
 import React from 'react'
 import axios from 'axios'
 import {Redirect} from 'react-router'
+import randomDisplayName from '../utils/randomDisplayName'
 
 import {getHeaders} from '../util/api'
 
@@ -17,6 +18,7 @@ class CreatePost extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.getRandomDisplayName()
   }
 
   handleChange (e) {
@@ -25,7 +27,11 @@ class CreatePost extends React.Component {
     })
   }
 
-  // this handleClick will send a post request to our /api/v1/. this needs to be added to the function
+  getRandomDisplayName () {
+    randomDisplayName()
+      .then(name => this.setState({displayName: name}))
+  }
+
   handleClick (e) {
     const postData = {
       postData: {
@@ -36,7 +42,7 @@ class CreatePost extends React.Component {
       }
     }
 
-    axios.post('http://localhost:3001/api/v1/posts/', postData, { headers: getHeaders() })
+    axios.post('http://localhost:3001/api/v1/posts/', postData, {headers: getHeaders()})
       .then(response => {
         this.setState({done: true})
       })
@@ -46,8 +52,8 @@ class CreatePost extends React.Component {
     return (
       <div className='createPost'>
         <h2>Create a Post</h2>
-        <textarea placeholder="Enter your title here..." name="title" value={this.state.title} onChange={this.handleChange} /><br />
-        <textarea placeholder="Display Name" name="displayName" value={this.state.displayName} onChange={this.handleChange} /><br />
+        <input placeholder="Enter your title here..." name="title" value={this.state.title} onChange={this.handleChange} /><br />
+        <p>Posting as: {this.state.displayName}</p><br />
         <textarea placeholder="Enter your post here..." name="body" value={this.state.body} onChange={this.handleChange}/><br />
         <button onClick={this.handleClick}>Submit</button>
         {this.state.done && <Redirect to="/list"/>}

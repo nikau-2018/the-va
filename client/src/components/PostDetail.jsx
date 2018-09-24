@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {fetchPosts, fetchReplies} from '../actions'
 import request from 'axios'
+import randomDisplayName from '../utils/randomDisplayName'
 
 class PostDetail extends React.Component {
   constructor (props) {
@@ -26,11 +27,8 @@ class PostDetail extends React.Component {
   }
 
   getRandomDisplayName () {
-    return request
-      .get('http://localhost:3001/api/v1/util/randomDisplayName')
-      .then(res => {
-        this.setState({displayName: res.data.displayName})
-      })
+    randomDisplayName()
+      .then(name => this.setState({displayName: name}))
   }
 
   handleSubmit = () => {
