@@ -30,13 +30,13 @@ class Home extends React.Component {
         </ul>
         <div className="bottom-tabs">
           <Link to="/myposts">
-            <button>Me</button>
+            <div>Me</div>
           </Link>
           <Link to="/list">
-            <button>Talanoa</button>
+            <div>Talanoa</div>
           </Link>
           <Link to="/village">
-            <button>Village</button>
+            <div>Village</div>
           </Link>
         </div>
       </div>

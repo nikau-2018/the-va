@@ -114,3 +114,12 @@ button {
   font-size: 1.8vw;
   font-style: italic;
 }
+
+.bottom-tabs {
+  display: flex;
+}
+
+.bottom-tabs a {
+  text-decoration: none;
+  border: 1px solid black;  
+}
