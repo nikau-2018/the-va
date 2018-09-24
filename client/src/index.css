@@ -10,6 +10,7 @@ body {
   top: -30%;
   left: -5%;
   width: 100%;
+  pointer-events: none;
 }
 
 .welcomeleaves {
@@ -27,12 +28,6 @@ body {
   border-image-width: 50%;
   border-image-outset: 20em;
   padding: 3em;
-/*   position: relative;
-  z-index: 0; */
-}
-
-.macron {
-  text-decoration: overline;
 }
 
 a {
@@ -47,8 +42,9 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
   text-transform: uppercase;
+  /* Font size needs to be removed from here and respective components need to be updated */
   font-size: 8vw;
-  font-family: 'Megrim', cursive;
+  font-family: 'Hanalei Fill', cursive;
 }
 
 h1 span {
@@ -75,7 +71,7 @@ button {
   text-transform: none;  
 }
 
-.register-container, .login-container, .cheekySkip, .createPost, .talanoa, .post-detail, .village, .home, .login-greeting {
+.register-container, .login-container, .cheekySkip, .createPost, .talanoa, .post-detail, .village, .home, .login-greeting, .deletePost {
   margin-top: 20%;
   text-align: center;
 }
