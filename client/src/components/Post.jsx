@@ -7,6 +7,7 @@ const Post = ({post}) => (
     <Link to={`/postDetail/${post.id}`}>
       <p>{post.title}</p>
     </Link>
+    
     <p>
       By: {post.displayName}<br/>
       <span className="fromDate">Posted: { moment(post.createdAt).fromNow() }</span>
