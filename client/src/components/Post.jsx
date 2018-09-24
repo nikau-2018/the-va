@@ -8,8 +8,8 @@ const Post = ({post}) => (
       <div>{post.title}</div>
     </Link>
     <div>By: {post.displayName}</div>
-    <div>Posted: {new Date(post.createdAt).toString()}</div>
-    <p>{ moment().fromNow() }</p>
+    {/* <div>Posted: {new Date(post.createdAt).toString()}</div> */}
+    <p>Posted: { moment(post.createdAt).fromNow() }</p>
   </div>
 )
 
