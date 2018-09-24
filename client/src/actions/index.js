@@ -5,6 +5,7 @@ export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 export const REQUEST_POSTS = 'REQUEST_POSTS'
 export const RECEIVE_REPLIES = 'RECEIVE_REPLIES'
 export const REQUEST_REPLIES = 'REQUEST_REPLIES'
+export const JUST_LOGGED_IN = 'JUST_LOGGED_IN'
 
 export const requestPosts = () => {
   return {
@@ -66,5 +67,11 @@ export function fetchReplies (id) {
       .catch(err => {
         dispatch(showError(err.message))
       })
+  }
+}
+
+export const justLoggedIn = () => {
+  return {
+    type: JUST_LOGGED_IN
   }
 }
