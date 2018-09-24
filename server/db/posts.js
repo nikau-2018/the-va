@@ -13,6 +13,7 @@ module.exports = {
 function getPosts (db = connection) {
   return db('posts')
     .select()
+    .orderBy('id', 'desc')
 }
 
 // Get users posts.
