@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 
 import ReactPlayer from 'react-player'
 import legendOfTelesaImage from '../../images/the-legend-of-telesa.png'
