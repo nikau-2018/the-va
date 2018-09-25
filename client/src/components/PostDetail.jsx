@@ -41,7 +41,7 @@ class PostDetail extends React.Component {
       }
     }
 
-    request.post('http://localhost:3001/api/v1/posts/reply', replyData)
+    request.post('/api/v1/posts/reply', replyData)
       .then(() => {
         this.props.dispatch(fetchReplies(this.props.match.params.id))
       })
