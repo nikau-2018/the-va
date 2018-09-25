@@ -30,13 +30,11 @@ function getReplies (postId, db = connection) {
 }
 
 function submitPost (postData, db = connection) {
-  postData.createdAt = Date.now()
   return db('posts')
     .insert(postData)
 }
 
 function submitReply (replyData, db = connection) {
-  replyData.createdAt = Date.now()
   return db('replies')
     .insert(replyData)
 }
