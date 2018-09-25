@@ -10,13 +10,10 @@ class Login extends React.Component {
     this.state = {
       username: '',
       password: '',
-
-      //login: true
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
-
 
   handleChange (e) {
     this.setState({
@@ -25,24 +22,16 @@ class Login extends React.Component {
   }
 
   handleSubmit (e) {
-//   this.setState({
-//     login: !this.state.login
-//   })
-    e.preventDefault();
+    //   this.setState({
+    //     login: !this.state.login
+    //   })
+    e.preventDefault()
     this.props.dispatch(loginUser(this.state.username, this.state.password))
   }
 
 
 
   render() {
-
-    //const { currentUser: { error, pending, user }, login } =this.props
-
-    // if (pending) {
-    //   return ()
-    //     <div> Logging in... </div>
-    // )
-    // }
 
     return (
       <div className='login-container'>

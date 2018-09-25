@@ -1,6 +1,6 @@
-/* 
+/*
   FILE:   HASH
-  VER:    1.0.0
+  VER:    1.1.0
   DESC:   Module to generate a hash from a plan string.
   INPUT:  STRING
   OUTPUT: STRING
@@ -12,14 +12,21 @@ const sodium = require('libsodium-wrappers')
 
 // File exports
 module.exports = {
-  generateHash,
-  checkHash
+  checkHash,
+  generateHash
+}
+
+// HELPER FUNCTION
+// Check an existing password hash against the password the user submitted
+function checkHash (hash, password) {
+  return sodium.ready.then(() =>
+    sodium.crypto_pwhash_str_verify(hash, password)
+  )
 }
 
 // HELPER FUNCTION
 // Generate Hash
 function generateHash (password) {
-
   // Initialise sodium.
   return sodium.ready.then(() =>
     sodium.crypto_pwhash_str(
@@ -27,12 +34,5 @@ function generateHash (password) {
       sodium.crypto_pwhash_OPSLIMIT_INTERACTIVE,
       sodium.crypto_pwhash_MEMLIMIT_MIN
     )
-  )
-}
-
-// Compare password with hash.
-function checkHash (hash, password) {
-  return sodium.ready.then(() =>
-    sodium.crypto_pwhash_str_verify(hash, password)
   )
 }
