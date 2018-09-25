@@ -117,9 +117,16 @@ button {
 
 .bottom-tabs {
   display: flex;
+  justify-content: center;
+  text-transform: uppercase;
 }
 
 .bottom-tabs a {
   text-decoration: none;
-  border: 1px solid black;  
+  /* border: 1px solid green; */
+  background-color: lightgreen;
+  border-bottom-left-radius: 35%;
+  border-bottom-right-radius: 35%;
+  padding: 5%;
+  flex-basis: 25%;
 }
