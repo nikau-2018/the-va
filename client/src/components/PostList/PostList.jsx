@@ -2,10 +2,11 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import {fetchPosts} from '../actions/index'
+import {fetchPosts} from '../../actions'
+import styles from './styles.css'
 
-import Post from './Post'
-import BottomTabs from './BottomTabs/BottomTabs'
+import Post from '../Post'
+import BottomTabs from '../BottomTabs/BottomTabs'
 
 class PostList extends React.Component {
   constructor (props) {
@@ -19,7 +20,7 @@ class PostList extends React.Component {
 
   render () {
     return (
-      <div className='talanoa'>
+      <div className='postList'>
         <h2>
           <span className='underline underlineTriangles'>
             Talanoa
@@ -31,6 +32,9 @@ class PostList extends React.Component {
             post={post}
           />
         )}
+        <Link to="/create">
+          <button className='createButton'>Add A New Post</button>
+        </Link>
         <Link to="/home">
           <button className='homeButton'>Home</button>
         </Link>

@@ -10,7 +10,7 @@ import PostDetail from './components/PostDetail'
 import DeletePost from './components/DeletePost'
 
 import Home from './components/Home/Home'
-import PostList from './components/PostList'
+import PostList from './components/PostList/PostList'
 import Village from './components/Village/Village'
 import MyPosts from './components/MyPosts'
 import CheekySkip from './components/CheekySkip'
