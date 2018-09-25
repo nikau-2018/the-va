@@ -20,7 +20,7 @@ class Home extends React.Component {
     const {justLoggedIn} = this.props
     return justLoggedIn
       ? <LoginGreeting dismissLoginGreeting={this.dismissLoginGreeting} />
-      : <div className="home">
+      : <div className='home'>
         <h1>Rules</h1>
         <p>Please read through the following rules and abide by them to ensure a safe community:</p>
         <ul>
@@ -28,7 +28,7 @@ class Home extends React.Component {
           <li>Be kind</li>
           <li>Be respectful</li>
         </ul>
-        <div className="bottom-tabs">
+        <div className='bottom-tabs'>
           <Link to="/myposts">
             Me
           </Link>

@@ -129,19 +129,17 @@ button {
   /* justify-content: center; */
   text-transform: uppercase;
   position: fixed;  
-  bottom: 1%;
+  bottom: 0.2%;
   left: 0%;
   width: 100%;
 }
 
 .bottom-tabs a {
   text-decoration: none;
-  /* border: 1px solid green; */
   background-color: white;
-  border-bottom-left-radius: 35%;
-  border-bottom-right-radius: 35%;
-  padding: 2%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  padding: 1%;
   flex: 1;
-  border: 2px solid black;
-  border-top: 3px solid black;  
+  border: .2em solid black;
 }
