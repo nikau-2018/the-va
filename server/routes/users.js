@@ -62,9 +62,10 @@ function register (req, res, next) {
   db.createNewUser(username, password)
 
     // Handle success.
-    .then(([id]) => {
+    .then(id => {
+      console.log('id ret as', id[0])
       // Store the new users ID in local state.
-      res.locals.userId = id
+      res.locals.userId = id[0]
 
       // Progress to the next middleware stack function.
       next()

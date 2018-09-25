@@ -1,5 +1,5 @@
 const connection = require('./')
-const { generateHash }  = require('../auth/hash')
+const {generateHash} = require('../auth/hash')
 
 module.exports = {
   getUsers,
@@ -18,7 +18,7 @@ function getUsers (db = connection) {
 
 // Retrieve a users record.
 function getUserById (id, db = connection) {
-  return db('users').where({ id }).first()
+  return db('users').where({id}).first()
 }
 
 // Retrieve a user by username.
@@ -29,9 +29,11 @@ function getUserByUsername (username, db = connection) {
 // Create new user record.
 function createNewUser (username, password, db = connection) {
   return generateHash(password)
-    .then(hash => db('users')
+    .then(hash => {
+      return db('users')
       .insert({username, password_hash: hash})
-    )
+      .returning('id')
+    })
 }
 
 // Delete user record.
@@ -39,11 +41,11 @@ function deleteUser (id, db = connection) {
   return db('users').where('users.id', id).del()
 }
 
-//Change user name
+// Change user name
 function changeUserName (id, username, db = connection) {
   return db('users')
 }
- // change user password
+// change user password
 function changeUserPassword (id, password, db = connection) {
 
 }
