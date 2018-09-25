@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import BottomTabs from './BottomTabs'
+
 export default function CheekySkip (props) {
   return (
     <div className='cheekySkip'>
@@ -11,6 +13,7 @@ export default function CheekySkip (props) {
       <Link to="/create">
         <button>Create new post</button>
       </Link>
+      <BottomTabs />
     </div>
   )
 }
