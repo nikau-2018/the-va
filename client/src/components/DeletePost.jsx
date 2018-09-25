@@ -2,6 +2,8 @@ import React from 'react'
 import request from 'axios'
 import {Redirect} from 'react-router-dom'
 
+import BottomTabs from './BottomTabs/BottomTabs'
+
 export default class DeletePost extends React.Component {
   constructor (props) {
     super(props)
@@ -40,8 +42,8 @@ export default class DeletePost extends React.Component {
         <button onClick={this.handleDelete}>delete</button>
         {this.state.deleted && <Redirect to = '/list'/>}
         {this.state.back && <Redirect to = {`/postDetail/${this.props.match.params.id}`}/>}
+        <BottomTabs />        
       </div>
-
     )
   }
 }

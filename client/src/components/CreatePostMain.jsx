@@ -1,11 +1,13 @@
 // the post-detail branch has the same component CreatePost.jsx, delete and use this file
 
 import React from 'react'
-import axios from 'axios'
+import request from 'axios'
 import {Redirect} from 'react-router'
 import randomDisplayName from '../utils/randomDisplayName'
 
 import {getHeaders} from '../util/api'
+
+import BottomTabs from './BottomTabs/BottomTabs'
 
 class CreatePost extends React.Component {
   constructor (props) {
@@ -42,7 +44,7 @@ class CreatePost extends React.Component {
       }
     }
 
-    axios.post('http://localhost:3001/api/v1/posts/', postData, {headers: getHeaders()})
+    request.post('/api/v1/posts/', postData, {headers: getHeaders()})
       .then(response => {
         this.setState({done: true})
       })
@@ -57,6 +59,7 @@ class CreatePost extends React.Component {
         <textarea placeholder="Enter your post here..." name="body" value={this.state.body} onChange={this.handleChange}/><br />
         <button onClick={this.handleClick}>Submit</button>
         {this.state.done && <Redirect to="/list"/>}
+        <BottomTabs />
       </div>
     )
   }

@@ -6,6 +6,7 @@ import {fetchPosts} from '../../actions'
 import styles from './styles.css'
 
 import Post from '../Post'
+import BottomTabs from '../BottomTabs/BottomTabs'
 
 class PostList extends React.Component {
   constructor (props) {
@@ -37,6 +38,7 @@ class PostList extends React.Component {
         <Link to="/home">
           <button className='homeButton'>Home</button>
         </Link>
+        <BottomTabs />
       </div>
     )
   }
