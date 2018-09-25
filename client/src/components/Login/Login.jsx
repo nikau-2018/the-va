@@ -3,7 +3,6 @@ import {Link, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {loginUser} from '../../actions/login'
 
-
 class Login extends React.Component {
   constructor (props) {
     super(props)
@@ -40,8 +39,8 @@ class Login extends React.Component {
           {this.props.isLoggedIn ? <Redirect to="/home"/> : null }
           {this.props.error}
           <p>
-            Username:<br /><input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Enter your username..." /><br />
-            Password:<br /><input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter your password..." />
+            Username:<br /><input type="text" name="username" autoComplete="off" value={this.state.username} onChange={this.handleChange} placeholder="Enter your username..." /><br />
+            Password:<br /><input type="password" name="password" autoComplete="off" value={this.state.password} onChange={this.handleChange} placeholder="Enter your password..." />
           </p>
           {/* TODO: Wire up login button */}
           <button onClick={this.handleSubmit}>Log in</button>

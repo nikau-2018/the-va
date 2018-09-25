@@ -8,7 +8,6 @@ export class Register extends React.Component {
     this.state = {
       username: '',
       password: '',
-      confirmPassword: '',
       registerSuccess: false
     }
     this.handleClick = this.handleClick.bind(this)
@@ -65,9 +64,8 @@ export class Register extends React.Component {
           </h1>
           <div className='form'>
             <p>
-              Name:<br /><input type='text' name='username' onChange={this.handleChange} placeholder="Enter a username..." value={this.state.username} /><br />
-              Password:<br /><input type='password' name='password' onChange={this.handleChange} placeholder="Enter a password..." value={this.state.password} /><br />
-              Confirm password:<br /><input type='password' name='confirmPassword' onChange={this.handleChange} placeholder="Re-enter password..." value={this.state.confirmPassword} />
+              Name:<br /><input type='text' name='username' autoComplete="off" onChange={this.handleChange} placeholder="Enter a username..." value={this.state.username} /><br />
+              Password:<br /><input type='password' name='password' autoComplete="off" onChange={this.handleChange} placeholder="Enter a password..." value={this.state.password} /><br />
             </p>
             <button onClick={this.handleClick}>Register</button>
             { this.state.registerSuccess && <Redirect to='/home' /> }

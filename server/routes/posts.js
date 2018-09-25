@@ -79,6 +79,7 @@ function getReplies (req, res) {
 
 function submitPost (req, res) {
   const postData = req.body.postData
+  console.log(req.user)
   db.submitPost(postData)
     .then(id => {
       res.status(201).json({
