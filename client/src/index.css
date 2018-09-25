@@ -119,6 +119,8 @@ button {
   display: flex;
   justify-content: center;
   text-transform: uppercase;
+  bottom: 1%;
+  position: fixed;
 }
 
 .bottom-tabs a {
