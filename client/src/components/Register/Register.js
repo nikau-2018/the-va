@@ -44,9 +44,13 @@ export class Register extends React.Component {
       })
 
         // Handle success response.
-        .then(this.setState({
-          registerSuccess: true
-        }))
+        .then(res => {
+          if (res.status === 200) {
+            this.setState({
+              registerSuccess: true
+            })
+          }
+        })
 
         // Handle errors.
         .catch(err => console.error(err))
