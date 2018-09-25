@@ -8,7 +8,6 @@ export class Register extends React.Component {
     this.state = {
       username: '',
       password: '',
-      confirmPassword: '',
       registerSuccess: false
     }
     this.handleClick = this.handleClick.bind(this)
