@@ -21,9 +21,6 @@ export default function WelcomePage (props) {
         </Link>
         <br />
         <br />
-        <Link to="/cheekySkip">
-          <button>Skip...</button>
-        </Link>
       </div>
     </div>
   )
