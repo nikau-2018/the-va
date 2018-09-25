@@ -5,6 +5,7 @@ import {fetchPosts, fetchReplies} from '../actions'
 import request from 'axios'
 import randomDisplayName from '../utils/randomDisplayName'
 
+import {getHeaders} from '../util/api'
 import BottomTabs from './BottomTabs/BottomTabs'
 
 class PostDetail extends React.Component {
@@ -43,7 +44,7 @@ class PostDetail extends React.Component {
       }
     }
 
-    request.post('/api/v1/posts/reply', replyData)
+    request.post('/api/v1/posts/reply', replyData, { headers: getHeaders() })
       .then(() => {
         this.props.dispatch(fetchReplies(this.props.match.params.id))
       })
