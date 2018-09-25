@@ -109,3 +109,12 @@ button {
   background-position: 0 1.06em;
   background-size: 10% 10%;
 }
+
+.player {
+  position: fixed;
+  /* top: 40%;
+  left: -5%; */
+  /* height: 10px;
+  width: 10px; */
+  pointer-events: none;
+}
