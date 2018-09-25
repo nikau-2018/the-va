@@ -126,18 +126,22 @@ button {
 
 .bottom-tabs {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   text-transform: uppercase;
+  position: fixed;  
   bottom: 1%;
-  position: fixed;
+  left: 0%;
+  width: 100%;
 }
 
 .bottom-tabs a {
   text-decoration: none;
   /* border: 1px solid green; */
-  background-color: lightgreen;
+  background-color: white;
   border-bottom-left-radius: 35%;
   border-bottom-right-radius: 35%;
-  padding: 5%;
-  flex-basis: 25%;
+  padding: 2%;
+  flex: 1;
+  border: 2px solid black;
+  border-top: 3px solid black;  
 }
