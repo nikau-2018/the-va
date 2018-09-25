@@ -1,7 +1,7 @@
 // the post-detail branch has the same component CreatePost.jsx, delete and use this file
 
 import React from 'react'
-import axios from 'axios'
+import request from 'axios'
 import {Redirect} from 'react-router'
 import randomDisplayName from '../utils/randomDisplayName'
 
@@ -42,7 +42,7 @@ class CreatePost extends React.Component {
       }
     }
 
-    axios.post('http://localhost:3001/api/v1/posts/', postData, {headers: getHeaders()})
+    request.post('/api/v1/posts/', postData, {headers: getHeaders()})
       .then(response => {
         this.setState({done: true})
       })
