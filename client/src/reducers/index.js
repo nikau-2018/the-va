@@ -14,8 +14,4 @@ export default combineReducers({
   waiting,
   justLoggedIn,
   loginReducers
-<<<<<<< HEAD
-
-=======
->>>>>>> 015081195595347fdc10248e4639855fa6653b18
 })

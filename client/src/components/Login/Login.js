@@ -1,16 +1,8 @@
 import React from 'react'
-<<<<<<< HEAD
-import {Link} from 'react-router-dom'
-import {connect} from 'react-redux'
-import { loginUser } from '../../actions/login';
-
-
-
-=======
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { loginUser } from '../../actions/login';
->>>>>>> 015081195595347fdc10248e4639855fa6653b18
+
 
 class Login extends React.Component {
   constructor (props) {
@@ -18,7 +10,8 @@ class Login extends React.Component {
     this.state = {
       username: '',
       password: '',
-      // login: true
+
+      //login: true
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -32,16 +25,6 @@ class Login extends React.Component {
   }
 
   handleSubmit (e) {
-<<<<<<< HEAD
-    e.preventDefault();
-    this.props.dispatch(loginUser(this.state.username, this.state.password))
-    
-
-  }
-
-// handleSubmit (e) {
-=======
->>>>>>> 015081195595347fdc10248e4639855fa6653b18
 //   this.setState({
 //     login: !this.state.login
 //   })
@@ -49,7 +32,18 @@ class Login extends React.Component {
     this.props.dispatch(loginUser(this.state.username, this.state.password))
   }
 
+
+
   render() {
+
+    //const { currentUser: { error, pending, user }, login } =this.props
+
+    // if (pending) {
+    //   return ()
+    //     <div> Logging in... </div>
+    // )
+    // }
+
     return (
       <div className='login-container'>
         <h1>
@@ -57,10 +51,11 @@ class Login extends React.Component {
           The Vā
         </h1>
         <form>
+          {this.props.isLoggedIn ? <Redirect to="/home"/> : null }
           <p>Username: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Enter your username..." /></p>
           <p>Password: <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter your password..." /></p>
           {/* TODO: Wire up login button */}
-          <p><button onClick={this.handleSubmit}>Log in</button></p>
+          <p><button onClick={this.handleSubmit}>Log in</button></p>    
           <Link to="/">Go Home</Link>
         </form>
       </div>
@@ -70,7 +65,9 @@ class Login extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
+    isLoggedIn: state.loginReducers.isLoggedIn
+
   }
 }
 
