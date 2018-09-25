@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import {fetchPosts} from '../actions/index'
 
 import Post from './Post'
-import BottomTabs from './BottomTabs'
+import BottomTabs from './BottomTabs/BottomTabs'
 
 class PostList extends React.Component {
   constructor (props) {

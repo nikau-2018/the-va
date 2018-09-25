@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 
-import BottomTabs from '../BottomTabs'
+import BottomTabs from '../BottomTabs/BottomTabs'
 
 const Village = (props) => {
   return (

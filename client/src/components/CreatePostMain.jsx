@@ -7,7 +7,7 @@ import randomDisplayName from '../utils/randomDisplayName'
 
 import {getHeaders} from '../util/api'
 
-import BottomTabs from './BottomTabs'
+import BottomTabs from './BottomTabs/BottomTabs'
 
 class CreatePost extends React.Component {
   constructor (props) {

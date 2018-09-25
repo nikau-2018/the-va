@@ -5,7 +5,7 @@ import {fetchPosts, fetchReplies} from '../actions'
 import request from 'axios'
 import randomDisplayName from '../utils/randomDisplayName'
 
-import BottomTabs from './BottomTabs'
+import BottomTabs from './BottomTabs/BottomTabs'
 
 class PostDetail extends React.Component {
   constructor (props) {

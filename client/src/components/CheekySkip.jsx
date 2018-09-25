@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import BottomTabs from './BottomTabs'
+import BottomTabs from './BottomTabs/BottomTabs'
 
 export default function CheekySkip (props) {
   return (

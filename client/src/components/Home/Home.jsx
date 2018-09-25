@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import LoginGreeting from '../LoginGreeting'
-import BottomTabs from '../BottomTabs'
+import BottomTabs from '../BottomTabs/BottomTabs'
 
 import {justLoggedIn} from '../../actions'
 

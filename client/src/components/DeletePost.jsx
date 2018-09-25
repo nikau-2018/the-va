@@ -2,7 +2,7 @@ import React from 'react'
 import request from 'axios'
 import {Redirect} from 'react-router-dom'
 
-import BottomTabs from './BottomTabs'
+import BottomTabs from './BottomTabs/BottomTabs'
 
 export default class DeletePost extends React.Component {
   constructor (props) {
