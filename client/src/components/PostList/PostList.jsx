@@ -20,7 +20,7 @@ class PostList extends React.Component {
 
   render () {
     return (
-      <div className='postList'>
+      <div className='talanoa postList'>
         <h2>
           <span className='underline underlineTriangles'>
             Talanoa
