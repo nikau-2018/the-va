@@ -5,3 +5,4 @@ export function setToken (token) {
 export function getToken () {
     return localStorage.getItem('_THE_VA_JWT')
 }
+
