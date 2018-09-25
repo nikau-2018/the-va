@@ -95,3 +95,7 @@ button {
   width: 10px; */
   pointer-events: none;
 }
+
+input {
+  color: black;
+}
