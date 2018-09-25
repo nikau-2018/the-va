@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import LoginGreeting from '../LoginGreeting'
+import BottomTabs from '../BottomTabs'
 
 import {justLoggedIn} from '../../actions'
 
@@ -28,17 +29,7 @@ class Home extends React.Component {
           <li>Be kind</li>
           <li>Be respectful</li>
         </ul>
-        <div className='bottom-tabs'>
-          <Link to="/myposts">
-            Me
-          </Link>
-          <Link to="/list">
-            Talanoa
-          </Link>
-          <Link to="/village">
-            Village
-          </Link>
-        </div>
+        <BottomTabs />
       </div>
   }
 }
