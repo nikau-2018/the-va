@@ -9,6 +9,7 @@ body {
   position: fixed;
   top: -30%;
   left: -5%;
+  z-index: 0;
   width: 100%;
   pointer-events: none;
 }
@@ -18,10 +19,6 @@ body {
   top: -18%;
   left: 0;
   width: 100%;
-}
-
-.homeButton {
-  margin: 15%;
 }
 
 .border {
@@ -80,26 +77,6 @@ button {
   text-align: center;
 }
 
-.talanoa span {
-  padding-bottom: 1em;
-}
-
-/* Speech bubbles */
-.talanoa .post {
-  background-color: lightgreen;
-  border-top-left-radius: 5em;
-  border-top-right-radius: 5em;
-  border-bottom-right-radius: 5em;
-  overflow-wrap: normal;
-  margin: 5%;
-  margin-left: 15%;
-  margin-right: 15%;
-  padding: 5%;
-  font-size: 2vw;
-  display:inline-block;
-  text-align: left;
-}
-
 .underline {
   background-repeat: repeat-x;
 }
@@ -110,8 +87,11 @@ button {
   background-size: 10% 10%;
 }
 
-.fromDate {
-  font-size: 1.8vw;
-  font-style: italic;
+.player {
+  position: fixed;
+  /* top: 40%;
+  left: -5%; */
+  /* height: 10px;
+  width: 10px; */
+  pointer-events: none;
 }
-
