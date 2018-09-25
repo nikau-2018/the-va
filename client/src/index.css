@@ -129,9 +129,10 @@ button {
   /* justify-content: center; */
   text-transform: uppercase;
   position: fixed;  
-  bottom: 0.2%;
+  bottom: 0%;
   left: 0%;
   width: 100%;
+  background-color: white;
 }
 
 .bottom-tabs a {

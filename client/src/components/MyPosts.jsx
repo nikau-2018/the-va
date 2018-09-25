@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import {fetchUserPosts} from '../actions'
 
 import Post from './Post'
+import BottomTabs from './BottomTabs'
 
 class MyPosts extends React.Component {
   constructor (props) {
@@ -34,6 +35,7 @@ class MyPosts extends React.Component {
         <Link to="/home">
           <button className='homeButton'>Home</button>
         </Link>
+        <BottomTabs />
       </div>
     )
   }
