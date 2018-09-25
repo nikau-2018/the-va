@@ -17,7 +17,6 @@ class MyPosts extends React.Component {
   }
 
   render () {
-    console.log('this.props.post is', this.props.post)
     return (
       <div className='myposts'>
         <h2>

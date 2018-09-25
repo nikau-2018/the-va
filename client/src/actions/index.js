@@ -16,7 +16,6 @@ export const requestPosts = () => {
 }
 
 export const receivePosts = (posts) => {
-  console.log(posts)
   return {
     type: RECEIVE_POSTS,
     posts: posts
@@ -30,7 +29,6 @@ export const requestReplies = () => {
 }
 
 export const receiveReplies = (replies) => {
-  console.log(replies)
   return {
     type: RECEIVE_REPLIES,
     replies: replies
@@ -48,7 +46,7 @@ export function fetchPosts () {
   return (dispatch) => {
     dispatch(requestPosts())
     return request
-      .get('http://localhost:3001/api/v1/posts', { headers: getHeaders() })
+      .get('http://localhost:3001/api/v1/posts', {headers: getHeaders()})
       .then(res => {
         dispatch(receivePosts(res.data.posts))
       })
@@ -62,7 +60,7 @@ export function fetchReplies (id) {
   return (dispatch) => {
     dispatch(requestReplies())
     return request
-      .get(`http://localhost:3001/api/v1/posts/${id}`, { headers: getHeaders() })
+      .get(`http://localhost:3001/api/v1/posts/${id}`, {headers: getHeaders()})
       .then(res => {
         dispatch(receiveReplies(res.data.replies))
       })
