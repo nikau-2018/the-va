@@ -10,7 +10,7 @@ const Post = ({post}) => (
     
     <p>
       By: {post.displayName}<br/>
-      <span className="fromDate">Posted: { moment(post.createdAt).fromNow() }</span>
+      <span className="fromDate">Posted: { moment.utc(post.createdAt).fromNow() }</span>
     </p>
   </div>
 )
