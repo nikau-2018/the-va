@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import LoginGreeting from '../LoginGreeting'
+import BottomTabs from '../BottomTabs/BottomTabs'
 
 import {justLoggedIn} from '../../actions'
 
@@ -20,7 +21,7 @@ class Home extends React.Component {
     const {justLoggedIn} = this.props
     return justLoggedIn
       ? <LoginGreeting dismissLoginGreeting={this.dismissLoginGreeting} />
-      : <div className="home">
+      : <div className='home'>
         <h1>Rules</h1>
         <p>Please read through the following rules and abide by them to ensure a safe community:</p>
         <ul>
@@ -28,17 +29,7 @@ class Home extends React.Component {
           <li>Be kind</li>
           <li>Be respectful</li>
         </ul>
-        <div className="bottom-tabs">
-          <Link to="/myposts">
-            <button>Me</button>
-          </Link>
-          <Link to="/list">
-            <button>Talanoa</button>
-          </Link>
-          <Link to="/village">
-            <button>Village</button>
-          </Link>
-        </div>
+        <BottomTabs />
       </div>
   }
 }

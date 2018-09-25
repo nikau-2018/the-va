@@ -6,6 +6,8 @@ import ilongaHaTahaImage from '../../images/I-longa-ha-taha.png'
 import iThoughtIRecognisedHerImage from '../../images/i-thought-i-recognised-her.png'
 import styles from './styles.css'
 
+import BottomTabs from '../BottomTabs/BottomTabs'
+
 const Village = (props) => {
   return (
     <div className='village'>
@@ -34,7 +36,7 @@ const Village = (props) => {
         <p>I thought I recognised her</p>
         <p className='body'>Josie Èdan Oloito'a talks about being a Samoan feminist comfortable with talking about sex, Instagram nudes and the increasingly popular Josie & T Youtube video series she co-hosts.</p>
       </div>
-
+      <BottomTabs />      
     </div>
   )
 }

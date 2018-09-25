@@ -7,6 +7,8 @@ import randomDisplayName from '../utils/randomDisplayName'
 
 import {getHeaders} from '../util/api'
 
+import BottomTabs from './BottomTabs/BottomTabs'
+
 class CreatePost extends React.Component {
   constructor (props) {
     super(props)
@@ -57,6 +59,7 @@ class CreatePost extends React.Component {
         <textarea placeholder="Enter your post here..." name="body" value={this.state.body} onChange={this.handleChange}/><br />
         <button onClick={this.handleClick}>Submit</button>
         {this.state.done && <Redirect to="/list"/>}
+        <BottomTabs />
       </div>
     )
   }

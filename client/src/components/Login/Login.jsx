@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link, Redirect } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { loginUser } from '../../actions/login';
+import {Link, Redirect} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {loginUser} from '../../actions/login'
 
 
 class Login extends React.Component {
@@ -9,7 +9,7 @@ class Login extends React.Component {
     super(props)
     this.state = {
       username: '',
-      password: '',
+      password: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -29,10 +29,7 @@ class Login extends React.Component {
     this.props.dispatch(loginUser(this.state.username, this.state.password))
   }
 
-
-
-  render() {
-
+  render () {
     return (
       <div className='login-container'>
         <h1>
@@ -41,11 +38,16 @@ class Login extends React.Component {
         </h1>
         <form>
           {this.props.isLoggedIn ? <Redirect to="/home"/> : null }
-          <p>Username: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Enter your username..." /></p>
-          <p>Password: <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter your password..." /></p>
+          {this.props.error}
+          <p>
+            Username:<br /><input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Enter your username..." /><br />
+            Password:<br /><input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter your password..." />
+          </p>
           {/* TODO: Wire up login button */}
-          <p><button onClick={this.handleSubmit}>Log in</button></p>    
-          <Link to="/">Go Home</Link>
+          <button onClick={this.handleSubmit}>Log in</button>
+          <Link to="/">
+            <button>Home</button>
+          </Link>
         </form>
       </div>
     )
@@ -55,7 +57,8 @@ class Login extends React.Component {
 const mapStateToProps = (state) => {
   return {
     user: state.user,
-    isLoggedIn: state.loginReducers.isLoggedIn
+    isLoggedIn: state.loginReducers.isLoggedIn,
+    error: state.loginReducers.error
 
   }
 }
