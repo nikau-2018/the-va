@@ -3,13 +3,13 @@ import {Link} from 'react-router-dom'
 
 const Post = ({post}) => (
   <div className='bottom-tabs'>
-    <Link to="/myposts">
+    <Link className='meTab' to="/myposts">
     Me
     </Link>
-    <Link to="/list">
+    <Link className='talanoaTab'to="/list">
     Talanoa
     </Link>
-    <Link to="/village">
+    <Link className='villageTab'to="/village">
     Village
     </Link>
   </div>

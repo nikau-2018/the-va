@@ -144,3 +144,8 @@ button {
   flex: 1;
   border: .2em solid black;
 }
+
+.myposts .meTab, .talanoa .talanoaTab, .village .villageTab {
+  border-top: 0px;
+  color: green;
+}
