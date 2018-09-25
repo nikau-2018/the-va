@@ -8,7 +8,7 @@ exports.up = knex =>
     t.integer('upvotes')
     t.integer('downvotes')
     t.boolean('reported')
-    t.string('created_at')
+    t.timestamps(false, true)
   })
 
 exports.down = knex => knex.schema.dropTable('replies')
