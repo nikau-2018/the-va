@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import request from 'axios'
 
 export class Register extends React.Component {
@@ -8,7 +8,8 @@ export class Register extends React.Component {
     this.state = {
       username: '',
       password: '',
-      confirmPassword: ''
+      confirmPassword: '',
+      registerSuccess: false
     }
     this.handleClick = this.handleClick.bind(this)
   }
@@ -43,11 +44,13 @@ export class Register extends React.Component {
       })
 
         // Handle success response.
-        .then(this.setState({
-          username: '',
-          password: '',
-          confirmPassword: ''
-        }))
+        .then(res => {
+          if (res.status === 200) {
+            this.setState({
+              registerSuccess: true
+            })
+          }
+        })
 
         // Handle errors.
         .catch(err => console.error(err))
@@ -67,6 +70,7 @@ export class Register extends React.Component {
               Confirm password:<br /><input type='password' name='confirmPassword' onChange={this.handleChange} placeholder="Re-enter password..." value={this.state.confirmPassword} />
             </p>
             <button onClick={this.handleClick}>Register</button>
+            { this.state.registerSuccess && <Redirect to='/home' /> }
             <Link to="/">
               <button>Back</button>
             </Link>

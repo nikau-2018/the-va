@@ -22,11 +22,6 @@ router.post(
 router.get(
   '/',
   verifyJwt({ secret: process.env.JWT_SECRET }),
-  getUsers)
-
-router.get(
-  '/',
-  verifyJwt({ secret: process.env.JWT_SECRET }),
   getUsers
 )
 
