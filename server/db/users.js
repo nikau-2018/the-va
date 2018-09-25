@@ -1,11 +1,14 @@
 const connection = require('./')
-const { generateHash } = require('../auth/hash')
+const { generateHash }  = require('../auth/hash')
 
 module.exports = {
   getUsers,
-  getUser,
+  getUserById,
+  getUserByUsername,
   createNewUser,
-  deleteUser
+  deleteUser,
+  changeUserName,
+  changeUserPassword
 }
 
 // Sample only: think about what you want this function to actually do...
@@ -14,8 +17,13 @@ function getUsers (db = connection) {
 }
 
 // Retrieve a users record.
-function getUser (username, db = connection) {
-  return db('users').where('username', username).first()
+function getUserById (id, db = connection) {
+  return db('users').where({ id }).first()
+}
+
+// Retrieve a user by username.
+function getUserByUsername (username, db = connection) {
+  return db('users').where({username}).first()
 }
 
 // Create new user record.
@@ -29,4 +37,13 @@ function createNewUser (username, password, db = connection) {
 // Delete user record.
 function deleteUser (id, db = connection) {
   return db('users').where('users.id', id).del()
+}
+
+//Change user name
+function changeUserName (id, username, db = connection) {
+  return db('users')
+}
+ // change user password
+function changeUserPassword (id, password, db = connection) {
+
 }
