@@ -1,0 +1,19 @@
+.player {
+  padding-left: 3%;
+}
+
+.village-images {
+  width: 90%;
+  box-shadow: 5px 10px 18px #888888;
+}
+
+
+p {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.body {
+  text-align: center;
+  font-size: 1.2rem;
+}

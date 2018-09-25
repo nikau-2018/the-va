@@ -4,6 +4,7 @@ import ReactPlayer from 'react-player'
 import legendOfTelesaImage from '../../images/the-legend-of-telesa.png'
 import ilongaHaTahaImage from '../../images/I-longa-ha-taha.png'
 import iThoughtIRecognisedHerImage from '../../images/i-thought-i-recognised-her.png'
+import styles from './styles.css'
 
 const Village = (props) => {
   return (
