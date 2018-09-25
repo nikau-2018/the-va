@@ -41,6 +41,7 @@ class Login extends React.Component {
         </h1>
         <form>
           {this.props.isLoggedIn ? <Redirect to="/home"/> : null }
+          {this.props.error}
           <p>Username: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Enter your username..." /></p>
           <p>Password: <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter your password..." /></p>
           {/* TODO: Wire up login button */}
@@ -55,7 +56,8 @@ class Login extends React.Component {
 const mapStateToProps = (state) => {
   return {
     user: state.user,
-    isLoggedIn: state.loginReducers.isLoggedIn
+    isLoggedIn: state.loginReducers.isLoggedIn,
+    error: state.loginReducers.error
 
   }
 }
