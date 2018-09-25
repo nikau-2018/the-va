@@ -1,0 +1,72 @@
+.postList a,
+.postList a button {
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  margin: 3rem auto;
+}
+.createButton {
+  margin: 3rem;
+}
+
+.postList {
+  position: relative;
+  z-index: 10;;
+  width: 100%;
+}
+
+.postList span {
+  padding-bottom: 1em;
+}
+
+/* Speech bubbles */
+.post {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 250px;
+  background-color: rgba(144, 238, 144, .8);
+  border-top-left-radius: 5em;
+  border-top-right-radius: 5em;
+  border-bottom-right-radius: 5em;
+  overflow-wrap: normal;
+  margin: 5% auto;
+  padding: 2rem 2rem 1rem;
+  font-size: 2.5vw;
+  display: block;
+  text-align: left;
+}
+
+.post p,
+.post a,
+.post a p {
+  margin: 0 auto;
+}
+
+.post a p {
+  font-size: 3.5vw;
+}
+
+.fromDate {
+  font-size: 2vw;
+  font-style: italic;
+}
+
+/* MEDIA QUERIES */
+/* Tablet */
+@media screen and (min-width: 600px) {
+  .postList a,
+  .postList a button {
+    max-width: unset;
+    width: 300px;
+  }
+  .post {
+    max-width: unset;
+    width: 300px;
+  }
+}

@@ -5,6 +5,8 @@ import {fetchPosts, fetchReplies} from '../actions'
 import request from 'axios'
 import randomDisplayName from '../utils/randomDisplayName'
 
+import BottomTabs from './BottomTabs/BottomTabs'
+
 class PostDetail extends React.Component {
   constructor (props) {
     super(props)
@@ -78,6 +80,7 @@ class PostDetail extends React.Component {
           <textarea name='replyText' onChange={this.handleChange} />
           <button onClick={this.handleSubmit}>Submit</button>
         </div>
+        <BottomTabs />                
       </div>
     )
   }
