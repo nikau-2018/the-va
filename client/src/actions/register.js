@@ -31,7 +31,7 @@ export function fetchRegister () {
     return (dispatch) => {
         dispatch(requestRegister())
         return request
-            .get('http://localhost:3001/api/users/register')
+            .get('/api/users/register')
             .then (res => {
                 dispatch(registerSuccess(res.data.users))
             })
