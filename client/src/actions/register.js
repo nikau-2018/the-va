@@ -1,7 +1,9 @@
 import request from 'axios'
 
+import {setToken} from '../utils/token'
+import {loginSuccess} from '../actions/login'
+
 export const REGISTER_REQUEST = 'REGISTER_REQUEST'
-export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 export const REGISTER_ERROR = 'REGISTER_ERROR'
 
 export const requestRegister = () => {
@@ -10,30 +12,24 @@ export const requestRegister = () => {
   }
 }
 
-export const registerSuccess = (user) => {
-  return {
-    type: REGISTER_SUCCESS,
-    user: user
-  }
-}
-
-export const registerError = (errMes) => {
+export const registerError = (error) => {
   return {
     type: REGISTER_ERROR,
-    errMes: errMes
+    error
   }
 }
 
-export function fetchRegister () {
+export function registerUser (username, password) {
   return (dispatch) => {
     dispatch(requestRegister())
     return request
-      .get('/api/users/register')
+      .post(`/api/v1/users/register`, {username, password})
       .then(res => {
-        dispatch(registerSuccess(res.data.users))
+        if (res.data.token) {
+          setToken(res.data.token)
+        }
+        dispatch(loginSuccess(res.data.user))
       })
-      .catch(err => {
-        dispatch(registerError(err.message))
-      })
+      .catch(({response}) => dispatch(registerError(response.data.message)))
   }
 }
