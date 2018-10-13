@@ -10,17 +10,15 @@ class Login extends React.Component {
       username: '',
       password: ''
     }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange (e) {
+  handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
-  handleSubmit (e) {
+  handleSubmit = (e) => {
     //   this.setState({
     //     login: !this.state.login
     //   })
