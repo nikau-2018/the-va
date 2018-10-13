@@ -7,20 +7,30 @@
   "author": "EDA",
   "license": "MIT",
   "private": false,
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.3.0",
+    "knex": "^0.15.2",
+    "libsodium-wrappers": "^0.7.3",
+    "sqlite3": "^4.0.2"
+  },
   "devDependencies": {
-    "concurrently": "^4.0.1"
+    "concurrently": "^4.0.1",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.4"
   },
   "scripts": {
+    "build": "cd client && yarn build",
     "client": "cd client && yarn start",
-    "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server\"",
+    "copy": "rm -rf ./public && mkdir public && cp -r client/build/* ./public",
+    "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server:dev\"",
     "install:client": "cd client && yarn",
-    "install:server": "cd server && yarn",
-    "message": "echo \"\n\n  ===== DEVELOPMENT repo only. (You probably meant yarn dev.) =====\n\n\"",
-    "preinstall": "yarn install:client && yarn install:server",
-    "server": "cd server && yarn dev",
-    "start": "yarn --silent message && exit 1"
-  },
-  "dependencies": {
-    "axios": "^0.18.0"
+    "message": "echo \"\n\n  ===== PRODUCTION only. (Did you mean yarn dev?) =====\n\n\"",
+    "preinstall": "yarn install:client",
+    "server:dev": "nodemon index",
+    "server:prod": "node index",
+    "start": "yarn --silent message && yarn server:prod"
   }
 }
