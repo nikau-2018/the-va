@@ -36,12 +36,12 @@
     text-align: center;
     text-transform: uppercase;
     /* Font size needs to be removed from here and respective components need to be updated */
-    font-size: 8vw;
+    font-size: 6vw;
     font-family: 'Hanalei Fill', cursive;
   }
   
   h1 span {
-    font-size: 9vw;
+    font-size: 6vw;
   }
   
   button {
