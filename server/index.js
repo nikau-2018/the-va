@@ -8,7 +8,7 @@ const util = require('./routes/util')
 const server = express()
 
 if (process.env.NODE_ENV === 'production') {
-  server.use(express.static(path.join(__dirname, 'public')))
+  server.use(express.static(path.join(__dirname, '..', 'public')))
 }
 
 server.use(function (req, res, next) {
@@ -27,7 +27,7 @@ server.use('/api/v1/util', util)
 // from CRA's `yarn build` (for BrowserRouter)
 if (process.env.NODE_ENV === 'production') {
   server.get('*', (req, res) => {
-    res.sendfile(path.join(__dirname, 'public/index.html'))
+    res.sendfile(path.join(__dirname, '..', 'public/index.html'))
   })
 }
 
