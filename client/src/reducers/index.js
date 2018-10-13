@@ -5,7 +5,7 @@ import posts from './posts'
 import replies from './replies'
 import waiting from './waiting'
 import justLoggedIn from './justLoggedIn'
-import auth from './login'
+import auth from './auth'
 
 export default combineReducers({
   errorMessage,
