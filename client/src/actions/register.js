@@ -11,7 +11,6 @@ export const requestRegister = () => {
 }
 
 export const registerSuccess = (user) => {
-  console.log(user)
   return {
     type: REGISTER_SUCCESS,
     user: user
