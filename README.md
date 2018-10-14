@@ -1,7 +1,7 @@
 # The Vā
 ### EDA Pac Hack 2018
 
-A prototype for an app that would allow Pacific people to anonymously express such feelings in an open, thoughtful and safe discussion.
+A prototype for an app that would allow Pacific people to anonymously express feelings in an open, thoughtful and safe discussion.
 
 Demo: http://the-va.herokuapp.com/
 
@@ -32,4 +32,5 @@ Zaine Kingi [@rous6026nz](https://github.com/rous6026nz)
 Alisa Herrera-Hayman [@alisamhh](https://github.com/alisamhh)  
 
 [devacademy.co.nz/pachack](https://devacademy.co.nz/pachack/)
+
 ![](https://github.com/nikau-2018/the-va/blob/development/client/src/Pac-Hack_Banner.jpg "Pac Hack")
