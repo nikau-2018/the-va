@@ -8,6 +8,7 @@ export default function WelcomePage (props) {
     <div>
       <img className='welcomeleaves' src={leavesImage}/>
       <div className='welcomeToTheVa'>
+        <span className='desktop-note'>Thanks for checking out the prototype version of The Vā!<br />At the moment we only have basic styling for the desktop view. We suggest you resize your browser or use a mobile phone.</span>
         <h1>
         WELCOME <br />
         TO <br />

@@ -73,7 +73,7 @@ function register (req, res, next) {
 
     // Handle errors.
     .catch(({message}) => {
-      if (message.includes('UNIQUE constraint failed: users.username')) {
+      if (message.includes('constraint')) {
         // Error if username exists in DB.
         return res.status(400).json({
           ok: false,
