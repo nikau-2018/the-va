@@ -20,7 +20,7 @@ class PostDetail extends React.Component {
   componentDidMount () {
     this.props.dispatch(fetchPosts())
     this.props.dispatch(fetchReplies(this.props.match.params.id))
-    this.getRandomDisplayName()
+    this.randomName()
   }
 
   handleChange = (e) => {
@@ -29,7 +29,7 @@ class PostDetail extends React.Component {
     })
   }
 
-  getRandomDisplayName () {
+  randomName = () => {
     randomDisplayName()
       .then(name => this.setState({displayName: name}))
   }
@@ -77,7 +77,7 @@ class PostDetail extends React.Component {
         </div>
         <div id="reply-box">
           <h3>Add a reply:</h3>
-          <p>Posting as: {this.state.displayName}</p>
+          <p>Posting as: {this.state.displayName} <span onClick={this.randomName}>🔄</span></p>
           <textarea name='replyText' onChange={this.handleChange} />
           <button onClick={this.handleSubmit}>Submit</button>
         </div>
