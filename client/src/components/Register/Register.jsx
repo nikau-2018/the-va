@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, Redirect } from 'react-router-dom'
-import request from 'axios'
+import {connect} from 'react-redux'
+import {registerUser} from '../../actions/register'
 
 export class Register extends React.Component {
   constructor (props) {
@@ -10,7 +11,6 @@ export class Register extends React.Component {
       password: '',
       registerSuccess: false
     }
-    this.handleClick = this.handleClick.bind(this)
   }
 
     handleChange = (e) => {
@@ -21,38 +21,7 @@ export class Register extends React.Component {
 
     // Register new user function.
     handleClick = () => {
-      // Configure Axios to perform the POST request.
-      request({
-
-        // Set HTTP request type.
-        method: 'post',
-
-        // Set endpoint.
-        url: '/api/v1/users/register',
-
-        // Set POST data to be stored in DB.
-        data: {
-          username: this.state.username,
-          password: this.state.password
-        },
-
-        // Set the HTTP header content type.
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-
-        // Handle success response.
-        .then(res => {
-          if (res.status === 200) {
-            this.setState({
-              registerSuccess: true
-            })
-          }
-        })
-
-        // Handle errors.
-        .catch(err => console.error(err))
+      this.props.dispatch(registerUser(this.state.username, this.state.password))
     }
 
     render () {
@@ -63,6 +32,8 @@ export class Register extends React.Component {
             The Vā
           </h1>
           <div className='form'>
+          {this.props.isLoggedIn ? <Redirect to="/home"/> : null }
+          {this.props.error}
             <p>
               Name:<br /><input type='text' name='username' autoComplete="off" onChange={this.handleChange} placeholder="Enter a username..." value={this.state.username} /><br />
               Password:<br /><input type='password' name='password' autoComplete="off" onChange={this.handleChange} placeholder="Enter a password..." value={this.state.password} /><br />
@@ -78,4 +49,11 @@ export class Register extends React.Component {
     }
 }
 
-export default Register
+const mapStateToProps = (state) => {
+  return {
+    isLoggedIn: state.auth.isLoggedIn,
+    error: state.auth.registerError
+  }
+}
+
+export default connect(mapStateToProps)(Register)

@@ -1,42 +1,35 @@
 import request from 'axios'
-import { dispatch } from '../../../node_modules/rxjs/internal/observable/pairs';
+
+import {setToken} from '../utils/token'
+import {loginSuccess} from '../actions/login'
 
 export const REGISTER_REQUEST = 'REGISTER_REQUEST'
-export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 export const REGISTER_ERROR = 'REGISTER_ERROR'
 
-
 export const requestRegister = () => {
-    return {
-        type: REGISTER_REQUEST
-    }
+  return {
+    type: REGISTER_REQUEST
+  }
 }
 
-export const registerSuccess = (user) => {
-    console.log(user)
-    return {
-        type: REGISTER_SUCCESS,
-        user: user 
-    }
+export const registerError = (error) => {
+  return {
+    type: REGISTER_ERROR,
+    error
+  }
 }
 
-export const registerError = (errMes) => {
-    return {
-        type: REGISTER_ERROR,
-        errMes: errMes
-    }
-}
-
-export function fetchRegister () {
-    return (dispatch) => {
-        dispatch(requestRegister())
-        return request
-            .get('/api/users/register')
-            .then (res => {
-                dispatch(registerSuccess(res.data.users))
-            })
-            .catch(err => {
-                dispatch(registerError(err.message))
-            })
-    }
+export function registerUser (username, password) {
+  return (dispatch) => {
+    dispatch(requestRegister())
+    return request
+      .post(`/api/v1/users/register`, {username, password})
+      .then(res => {
+        if (res.data.token) {
+          setToken(res.data.token)
+        }
+        dispatch(loginSuccess(res.data.user))
+      })
+      .catch(({response}) => dispatch(registerError(response.data.message)))
+  }
 }

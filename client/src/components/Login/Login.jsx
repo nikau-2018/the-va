@@ -10,17 +10,15 @@ class Login extends React.Component {
       username: '',
       password: ''
     }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange (e) {
+  handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
-  handleSubmit (e) {
+  handleSubmit = (e) => {
     //   this.setState({
     //     login: !this.state.login
     //   })
@@ -42,7 +40,6 @@ class Login extends React.Component {
             Username:<br /><input type="text" name="username" autoComplete="off" value={this.state.username} onChange={this.handleChange} placeholder="Enter your username..." /><br />
             Password:<br /><input type="password" name="password" autoComplete="off" value={this.state.password} onChange={this.handleChange} placeholder="Enter your password..." />
           </p>
-          {/* TODO: Wire up login button */}
           <button onClick={this.handleSubmit}>Log in</button>
           <Link to="/">
             <button>Home</button>
@@ -55,10 +52,8 @@ class Login extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user,
-    isLoggedIn: state.loginReducers.isLoggedIn,
-    error: state.loginReducers.error
-
+    isLoggedIn: state.auth.isLoggedIn,
+    error: state.auth.loginError
   }
 }
 

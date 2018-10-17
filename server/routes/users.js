@@ -21,14 +21,14 @@ router.post(
 
 router.get(
   '/',
-  verifyJwt({ secret: process.env.JWT_SECRET }),
+  verifyJwt({secret: process.env.JWT_SECRET}),
   getUsers
 )
 
 // Secure route.
 router.delete(
   '/user/:id',
-  verifyJwt({ secret: process.env.JWT_SECRET }),
+  verifyJwt({secret: process.env.JWT_SECRET}),
   deleteUser
 )
 
@@ -72,7 +72,7 @@ function register (req, res, next) {
     })
 
     // Handle errors.
-    .catch(({ message }) => {
+    .catch(({message}) => {
       if (message.includes('UNIQUE constraint failed: users.username')) {
         // Error if username exists in DB.
         return res.status(400).json({
@@ -101,9 +101,9 @@ function login (req, res, next) {
         })
       }
 
-      const {password_hash, id} = user
+      const {passwordHash, id} = user
 
-      checkHash(password_hash, password)
+      checkHash(passwordHash, password)
         .then(ok => {
           if (!ok) {
             return res.status(403).json({
@@ -138,7 +138,7 @@ function deleteUser (req, res) {
     })
 
     // Handle error.
-    .catch(({ message }) => {
+    .catch(({message}) => {
       // Internal server error.
       res.status(500).json({
         ok: false,
