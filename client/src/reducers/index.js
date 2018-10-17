@@ -1,7 +1,17 @@
 import {combineReducers} from 'redux'
 
-import users from './users'
+import errorMessage from './error-message'
+import posts from './posts'
+import replies from './replies'
+import waiting from './waiting'
+import justLoggedIn from './justLoggedIn'
+import auth from './auth'
 
 export default combineReducers({
-  users
+  errorMessage,
+  posts,
+  replies,
+  waiting,
+  justLoggedIn,
+  auth
 })

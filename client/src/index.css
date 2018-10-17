@@ -1,5 +1,184 @@
+@media only screen and (min-width: 700px) {
+  body {
+    margin: 0;
+    padding: 0;
+    color: black;    
+    font-family: 'Rubik';
+  }
+  
+  .appleaves {
+    display: none;
+  }
+
+  .welcomeleaves {
+    display: none;
+  }
+ 
+  .border {
+    border-left: 2em solid transparent;
+    border-right: 2em solid transparent;
+    border-image: url("./images/hearts-border.png");
+    border-image-width: 50%;
+    border-image-outset: 50em;
+    padding: 3em;
+  }
+  
+  a {
+    color: black;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    color: darkgreen;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    text-transform: uppercase;
+    /* Font size needs to be removed from here and respective components need to be updated */
+    font-size: 6vw;
+    font-family: 'Hanalei Fill', cursive;
+  }
+  
+  h1 span {
+    font-size: 6vw;
+  }
+  
+  button {
+    border: 0px;
+    width: 40%;
+    background-color: lightgreen;      
+    color: black;  
+    border-radius: 0px;
+  /*   Below is needed if we remove skeleton:
+    text-transform: uppercase;   */
+  }
+  
+  .welcomeToTheVa {
+    text-align: center;
+  }
+  
+  .welcomeToTheVa h1 {
+    padding-top: 6%;
+    padding-bottom: 4%;
+    text-transform: none;  
+  }
+  
+  .register-container, .login-container, .cheekySkip, .createPost, .talanoa, .post-detail, .village, .home, .login-greeting, .deletePost, .myposts {
+    margin-top: 5%;
+    text-align: center;
+  }
+  
+  .underline {
+    background-repeat: repeat-x;
+  }
+  
+  .underlineTriangles {
+    background-image: url("./images/triangle.png");
+    background-position: 0 1.06em;
+    background-size: 10% 10%;
+  }
+  
+  input {
+    color: black;
+  }
+  }
+
+@media only screen and (max-width: 700px) {
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  color: black;    
+  font-family: 'Rubik';
+}
+
+.desktop-note {
+  display: none;
+}
+
+.appleaves {
+  position: fixed;
+  top: -30%;
+  left: -5%;
+  z-index: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.welcomeleaves {
+  position: fixed;
+  top: -18%;
+  left: 0;
+  width: 100%;
+}
+
+.border {
+  border-left: 2em solid transparent;
+  border-right: 2em solid transparent;
+  border-image: url("./images/hearts-border.png");
+  border-image-slice: 80% 80%;
+  border-image-width: 50%;
+  border-image-outset: 20em;
+  padding: 3em;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+}
+
+a:hover {
+  color: darkgreen;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  text-transform: uppercase;
+  /* Font size needs to be removed from here and respective components need to be updated */
+  font-size: 8vw;
+  font-family: 'Hanalei Fill', cursive;
+}
+
+h1 span {
+  font-size: 9vw;
+}
+
+button {
+  border: 0px;
+  width: 70%;
+  background-color: lightgreen;      
+  color: black;  
+  border-radius: 0px;
+/*   Below is needed if we remove skeleton:
+  text-transform: uppercase;   */
+}
+
+.welcomeToTheVa {
+  text-align: center;
+  margin-top: 40%;
+}
+
+.welcomeToTheVa h1 {
+  padding: 10%;
+  text-transform: none;  
+}
+
+.register-container, .login-container, .cheekySkip, .createPost, .talanoa, .post-detail, .village, .home, .login-greeting, .deletePost, .myposts {
+  margin-top: 20%;
+  text-align: center;
+}
+
+.underline {
+  background-repeat: repeat-x;
+}
+
+.underlineTriangles {
+  background-image: url("./images/triangle.png");
+  background-position: 0 1.06em;
+  background-size: 10% 10%;
+}
+
+input {
+  color: black;
+}
 }

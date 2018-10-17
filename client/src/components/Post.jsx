@@ -1,11 +1,17 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+const moment = require('moment')
 
 const Post = ({post}) => (
-  <div>
-    <h4>{post.title}</h4>
-    <h6>{post.displayName}</h6>
-    <p>{Date(post.date)}</p>
-    <p>{post.body}</p>
+  <div className='post'>
+    <Link to={`/postDetail/${post.id}`}>
+      <p>{post.title}</p>
+    </Link>
+    
+    <p>
+      By: {post.displayName}<br/>
+      <span className="fromDate">Posted: { moment.utc(post.createdAt).fromNow() }</span>
+    </p>
   </div>
 )
 
