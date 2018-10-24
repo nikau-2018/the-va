@@ -5,7 +5,7 @@ A prototype for an app that would allow Pacific people to anonymously express fe
 
 Demo: http://the-va.herokuapp.com/
 
-If you want to run locally, clone down the repo and run the following in the root directory:
+If you want to try it out locally, clone down the repo and run the following in the root directory:
 ```sh
 touch .env && echo "JWT_SECRET=yourRandomSecretHere" >> .env
 yarn && yarn knex migrate:latest && yarn knex seed:run
