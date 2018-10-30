@@ -3,7 +3,7 @@
 
 A prototype for an app that would allow Pacific people to anonymously express feelings in an open, thoughtful and safe discussion.
 
-Demo: http://the-va.herokuapp.com/
+Demo: http://the-va.herokuapp.com/ (_It might take a while for Heroku to spin up on first load_)
 
 If you want to try it out locally, clone down the repo and run the following in the root directory:
 ```sh
